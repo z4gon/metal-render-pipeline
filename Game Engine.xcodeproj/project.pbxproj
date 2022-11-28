@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		7F8910BF29347D5600E4C8ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8910BE29347D5600E4C8ED /* AppDelegate.swift */; };
-		7F8910C129347D5600E4C8ED /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8910C029347D5600E4C8ED /* ViewController.swift */; };
 		7F8910C429347D5600E4C8ED /* Game_Engine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F8910C229347D5600E4C8ED /* Game_Engine.xcdatamodeld */; };
 		7F8910C629347D5600E4C8ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F8910C529347D5600E4C8ED /* Assets.xcassets */; };
 		7F8910C929347D5600E4C8ED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F8910C729347D5600E4C8ED /* Main.storyboard */; };
@@ -37,7 +36,6 @@
 /* Begin PBXFileReference section */
 		7F8910BB29347D5600E4C8ED /* Game Engine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Engine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F8910BE29347D5600E4C8ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7F8910C029347D5600E4C8ED /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7F8910C329347D5600E4C8ED /* Game_Engine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Game_Engine.xcdatamodel; sourceTree = "<group>"; };
 		7F8910C529347D5600E4C8ED /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F8910C829347D5600E4C8ED /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -74,6 +72,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7F1AA6EB29348BDA00BD3501 /* Other Files */ = {
+			isa = PBXGroup;
+			children = (
+				7F8910BE29347D5600E4C8ED /* AppDelegate.swift */,
+				7F8910C529347D5600E4C8ED /* Assets.xcassets */,
+				7F8910CA29347D5600E4C8ED /* Game_Engine.entitlements */,
+				7F8910C229347D5600E4C8ED /* Game_Engine.xcdatamodeld */,
+			);
+			path = "Other Files";
+			sourceTree = "<group>";
+		};
 		7F8910B229347D5600E4C8ED = {
 			isa = PBXGroup;
 			children = (
@@ -97,12 +106,8 @@
 		7F8910BD29347D5600E4C8ED /* Game Engine */ = {
 			isa = PBXGroup;
 			children = (
-				7F8910BE29347D5600E4C8ED /* AppDelegate.swift */,
-				7F8910C029347D5600E4C8ED /* ViewController.swift */,
-				7F8910C529347D5600E4C8ED /* Assets.xcassets */,
+				7F1AA6EB29348BDA00BD3501 /* Other Files */,
 				7F8910C729347D5600E4C8ED /* Main.storyboard */,
-				7F8910CA29347D5600E4C8ED /* Game_Engine.entitlements */,
-				7F8910C229347D5600E4C8ED /* Game_Engine.xcdatamodeld */,
 			);
 			path = "Game Engine";
 			sourceTree = "<group>";
@@ -254,7 +259,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F8910C129347D5600E4C8ED /* ViewController.swift in Sources */,
 				7F8910BF29347D5600E4C8ED /* AppDelegate.swift in Sources */,
 				7F8910C429347D5600E4C8ED /* Game_Engine.xcdatamodeld in Sources */,
 			);
@@ -422,7 +426,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Game Engine/Game_Engine.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Game Engine/Other Files/Game_Engine.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -447,7 +451,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = "Game Engine/Game_Engine.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Game Engine/Other Files/Game_Engine.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
