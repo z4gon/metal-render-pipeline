@@ -10,6 +10,7 @@ import MetalKit
 class GameView: MTKView {
     
     var commandQueue: MTLCommandQueue!
+    var renderPipelineState: MTLRenderPipelineState!
     
     required init(coder: NSCoder) {
         super.init(coder: coder)
@@ -27,6 +28,32 @@ class GameView: MTKView {
         
         // create the command queue to handle commands for the GPU
         self.commandQueue = device?.makeCommandQueue()
+        
+        createRenderPipelineState()
+    }
+    
+    func createRenderPipelineState(){
+        
+        let library = device?.makeDefaultLibrary()
+        
+        // at compile time it will pick the right vertex and shader functions by matching the names
+        let vertexFunction = library?.makeFunction(name: "basic_vertex_shader")
+        let fragmentFunction = library?.makeFunction(name: "basic_fragment_shader")
+        
+        // create the descriptor for the render pipeline, make the pixel format match the device
+        let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
+        renderPipelineDescriptor.colorAttachments[0].pixelFormat = MTLPixelFormat.bgra8Unorm
+        
+        // set the vertex and fragment functions
+        renderPipelineDescriptor.vertexFunction = vertexFunction
+        renderPipelineDescriptor.fragmentFunction = fragmentFunction
+        
+        // create the render pipeline state using the render pipeline descriptor
+        do {
+            renderPipelineState = try device?.makeRenderPipelineState(descriptor: renderPipelineDescriptor)
+        } catch let error as NSError {
+            print(error)
+        }
     }
     
     override func draw(_ dirtyRect: NSRect) {
@@ -40,5 +67,19 @@ class GameView: MTKView {
         // create the render command encoder
         // pass the render pass descriptor, which includes pixel information and destination buffers
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
+        
+        // set the render pipeline state to the render command encoder
+        renderCommandEncoder?.setRenderPipelineState(self.renderPipelineState)
+        
+        // TODO: send info to render command encoder
+        
+        // after passing all the data
+        renderCommandEncoder?.endEncoding()
+        
+        // the command buffer will present the result of the rendering when it's done
+        commandBuffer?.present(drawable)
+        
+        // execute the command buffer
+        commandBuffer?.commit()
     }
 }

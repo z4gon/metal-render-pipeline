@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7F1AA6ED2934924200BD3501 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1AA6EC2934924200BD3501 /* GameView.swift */; };
+		7F1AA6EF2934A38500BD3501 /* MyShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 7F1AA6EE2934A38500BD3501 /* MyShaders.metal */; };
 		7F8910BF29347D5600E4C8ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8910BE29347D5600E4C8ED /* AppDelegate.swift */; };
 		7F8910C429347D5600E4C8ED /* Game_Engine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F8910C229347D5600E4C8ED /* Game_Engine.xcdatamodeld */; };
 		7F8910C629347D5600E4C8ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F8910C529347D5600E4C8ED /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 
 /* Begin PBXFileReference section */
 		7F1AA6EC2934924200BD3501 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		7F1AA6EE2934A38500BD3501 /* MyShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MyShaders.metal; sourceTree = "<group>"; };
 		7F8910BB29347D5600E4C8ED /* Game Engine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Engine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F8910BE29347D5600E4C8ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F8910C329347D5600E4C8ED /* Game_Engine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Game_Engine.xcdatamodel; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				7F1AA6EC2934924200BD3501 /* GameView.swift */,
+				7F1AA6EE2934A38500BD3501 /* MyShaders.metal */,
 				7F8910C729347D5600E4C8ED /* Main.storyboard */,
 				7F1AA6EB29348BDA00BD3501 /* Other Files */,
 			);
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F1AA6EF2934A38500BD3501 /* MyShaders.metal in Sources */,
 				7F8910BF29347D5600E4C8ED /* AppDelegate.swift in Sources */,
 				7F1AA6ED2934924200BD3501 /* GameView.swift in Sources */,
 				7F8910C429347D5600E4C8ED /* Game_Engine.xcdatamodeld in Sources */,
