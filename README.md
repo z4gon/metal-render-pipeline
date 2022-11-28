@@ -1,2 +1,5 @@
-# swift-metal-game-engine
-3D Game Engine built in Swift with the Metal Graphics API
+# 3D Game Engine
+
+## Built in Swift using Metal graphics API
+
+Based on the [tutorial by Rick Twohy](https://github.com/twohyjr/Metal-Game-Engine-Tutorial)
