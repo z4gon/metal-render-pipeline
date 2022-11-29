@@ -12,6 +12,15 @@ class GameView: MTKView {
     var commandQueue: MTLCommandQueue!
     var renderPipelineState: MTLRenderPipelineState!
     
+    // counter clock wise to define the face
+    var vertices: [float3] = [
+        float3(0, 1, 0),    // top mid
+        float3(-1, -1, 0),  // bot left
+        float3(1, -1, 0),   // top right
+    ]
+    
+    var vertexBuffer: MTLBuffer!;
+    
     required init(coder: NSCoder) {
         super.init(coder: coder)
         
@@ -30,6 +39,14 @@ class GameView: MTKView {
         self.commandQueue = device?.makeCommandQueue()
         
         createRenderPipelineState()
+        
+        createBuffers()
+    }
+    
+    func createBuffers() {
+        let vertexMemSize = MemoryLayout<float3>.stride
+        
+        vertexBuffer = device?.makeBuffer(bytes: vertices, length: vertexMemSize * vertices.count, options: [])
     }
     
     func createRenderPipelineState(){
@@ -71,7 +88,10 @@ class GameView: MTKView {
         // set the render pipeline state to the render command encoder
         renderCommandEncoder?.setRenderPipelineState(self.renderPipelineState)
         
-        // TODO: send info to render command encoder
+        // send info to render command encoder
+        renderCommandEncoder?.setVertexBuffer(vertexBuffer, offset: 0, index: 0)
+        // draw a triangle using the vertices in the buffer
+        renderCommandEncoder?.drawPrimitives(type: MTLPrimitiveType.triangle, vertexStart: 0, vertexCount: vertices.count)
         
         // after passing all the data
         renderCommandEncoder?.endEncoding()
