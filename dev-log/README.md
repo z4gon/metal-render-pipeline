@@ -1,4 +1,3 @@
 # Dev Log
 
-- [Setup Project](./1-2-setup-project/README.md)
-- [Render Pipeline](./3-render-pipeline/README.md)
+- [Part 1: Setting up the basic Render Pipeline](./part-1/README.md)
