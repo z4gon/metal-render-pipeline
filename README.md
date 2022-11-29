@@ -1,4 +1,4 @@
-# 3D Game Engine
+# Metal Render Pipeline
 
 ## Built in Swift using Metal graphics API
 
