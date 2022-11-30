@@ -46,6 +46,12 @@ func createVertices() {
         Vertex(position: SIMD3<Float>(1, -1, 0),  color: SIMD4<Float>(1, 0, 0, 1)), // top right
     ]
 }
+
+func createBuffers() {
+    let vertexMemSize = MemoryLayout<Vertex>.stride
+
+    vertexBuffer = device?.makeBuffer(bytes: vertices, length: vertexMemSize * vertices.count, options: [])
+}
 ```
 
 ---
