@@ -38,10 +38,13 @@ The vertices array now holds objects of this type, and we also need to account f
 ```swift
 var vertices: [Vertex]!
 
-func createBuffers() {
-    let vertexMemSize = MemoryLayout<Vertex>.stride
-
-    vertexBuffer = device?.makeBuffer(bytes: vertices, length: vertexMemSize * vertices.count, options: [])
+func createVertices() {
+    // counter clock wise to define the face
+    vertices = [
+        Vertex(position: SIMD3<Float>(0, 1, 0),   color: SIMD4<Float>(0, 0, 1, 1)), // top mid
+        Vertex(position: SIMD3<Float>(-1, -1, 0), color: SIMD4<Float>(0, 1, 0, 1)), // bot left
+        Vertex(position: SIMD3<Float>(1, -1, 0),  color: SIMD4<Float>(1, 0, 0, 1)), // top right
+    ]
 }
 ```
 
