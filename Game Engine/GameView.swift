@@ -12,13 +12,12 @@ class GameView: MTKView {
     var commandQueue: MTLCommandQueue!
     var renderPipelineState: MTLRenderPipelineState!
     
-    // counter clock wise to define the face
-    var vertices: [float3] = [
-        float3(0, 1, 0),    // top mid
-        float3(-1, -1, 0),  // bot left
-        float3(1, -1, 0),   // top right
-    ]
+    struct Vertex {
+        var position: SIMD3<Float>
+        var color: SIMD4<Float>
+    }
     
+    var vertices: [Vertex]!
     var vertexBuffer: MTLBuffer!;
     
     required init(coder: NSCoder) {
@@ -30,7 +29,7 @@ class GameView: MTKView {
         
         // clearColor fills the screen each time the GPU clears the frame (60 times per second at 60 fps)
         // rgba is 0-1
-        self.clearColor = MTLClearColor(red: 0.43, green: 0.73, blue: 0.35, alpha: 1.0)
+        self.clearColor = MTLClearColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         
         // how pixels are stored
         self.colorPixelFormat = MTLPixelFormat.bgra8Unorm
@@ -40,11 +39,21 @@ class GameView: MTKView {
         
         createRenderPipelineState()
         
+        createVertices()
         createBuffers()
     }
     
+    func createVertices() {
+        // counter clock wise to define the face
+        vertices = [
+            Vertex(position: SIMD3<Float>(0, 1, 0),   color: SIMD4<Float>(0, 0, 1, 1)), // top mid
+            Vertex(position: SIMD3<Float>(-1, -1, 0), color: SIMD4<Float>(0, 1, 0, 1)), // bot left
+            Vertex(position: SIMD3<Float>(1, -1, 0),  color: SIMD4<Float>(1, 0, 0, 1)), // top right
+        ]
+    }
+    
     func createBuffers() {
-        let vertexMemSize = MemoryLayout<float3>.stride
+        let vertexMemSize = MemoryLayout<Vertex>.stride
         
         vertexBuffer = device?.makeBuffer(bytes: vertices, length: vertexMemSize * vertices.count, options: [])
     }
