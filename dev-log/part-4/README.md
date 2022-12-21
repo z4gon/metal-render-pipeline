@@ -96,7 +96,7 @@ vertex FragmentData basic_vertex_shader(
 
 ---
 
-# Result
+## Result
 
 The end result hasn't changed.
 

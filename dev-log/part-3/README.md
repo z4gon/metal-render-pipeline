@@ -126,6 +126,6 @@ fragment half4 basic_fragment_shader(FragmentData IN [[ stage_in ]]){
 
 ---
 
-# Result
+## Result
 
 ![Picture](./1.jpg)
