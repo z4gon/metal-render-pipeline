@@ -12,27 +12,27 @@
 using namespace metal;
 
 struct VertexData {
-    float3 position;
-    float4 color;
+    float3 position [[ attribute(0) ]];
+    float4 color [[ attribute(1) ]];
 };
 
 struct FragmentData {
-    float4 position [[ position ]]; // use position attribute to prevent interpolation of the value
+    // use position attribute to prevent interpolation of the value
+    float4 position [[ position ]];
     float4 color;
 };
 
 vertex FragmentData basic_vertex_shader(
-  const device VertexData *vertices [[ buffer(0) ]], // access the vertices buffer at buffer with index 0
-  const uint vertexID [[ vertex_id ]] // get the vertex id, which corresponds to the index of the vertex in the buffer
+  // metal can infer the data because we are describing it using the vertex descriptor
+  const VertexData IN [[ stage_in ]]
 ){
-    VertexData IN = vertices[vertexID];
-    
     FragmentData OUT;
     
-    OUT.position = float4(IN.position, 1); // return the vertex position in homogeneous screen space
+    // return the vertex position in homogeneous screen space
+    OUT.position = float4(IN.position, 1);
     OUT.color = IN.color;
     
-    return OUT; // return the vertex position in homogeneous screen space
+    return OUT;
 }
 
 fragment half4 basic_fragment_shader(
