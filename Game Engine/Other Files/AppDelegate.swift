@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  Game Engine
-//
-//  Created by z4gon on 11/28/22.
-//
-
 import Cocoa
 
 @main

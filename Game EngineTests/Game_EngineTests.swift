@@ -1,10 +1,3 @@
-//
-//  Game_EngineTests.swift
-//  Game EngineTests
-//
-//  Created by z4gon on 11/28/22.
-//
-
 import XCTest
 @testable import Game_Engine
 
