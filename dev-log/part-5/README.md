@@ -19,7 +19,7 @@
 
 ## Libraries
 
-We will extract the code that initializes the **MTKLibrary**, **MTKRenderPipelineState**, **MTKRenderPipelineDescriptor** and **MTKVertexDescriptor** into separate classes.
+We will extract the code that initializes the **MTLLibrary**, **MTLRenderPipelineState**, **MTLRenderPipelineDescriptor** and **MTLVertexDescriptor** into separate classes.
 
 Each of these classes will act as a cache, with a dictionary mapping enum values to objects instances.
 
