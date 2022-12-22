@@ -53,7 +53,7 @@ class GameView: MTKView {
     }
     
     func createBuffers() {
-        let vertexMemSize = Vertex.stride()
+        let vertexMemSize = Vertex.stride
         
         vertexBuffer = device?.makeBuffer(bytes: vertices, length: vertexMemSize * vertices.count, options: [])
     }
@@ -91,11 +91,11 @@ class GameView: MTKView {
         // - offset inside the struct, needs to be the amount of memory of the position, in bytes
         vertexDescriptor.attributes[1].format = MTLVertexFormat.float4
         vertexDescriptor.attributes[1].bufferIndex = 0
-        vertexDescriptor.attributes[1].offset = float3.size()
+        vertexDescriptor.attributes[1].offset = float3.size
         
         // layout, how the pipeline state describes the struct
         // https://swiftunboxed.com/internals/size-stride-alignment/
-        vertexDescriptor.layouts[0].stride = Vertex.stride()
+        vertexDescriptor.layouts[0].stride = Vertex.stride
         
         renderPipelineDescriptor.vertexDescriptor = vertexDescriptor
         
