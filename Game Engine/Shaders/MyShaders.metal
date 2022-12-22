@@ -1,10 +1,3 @@
-//
-//  MyShaders.metal
-//  Game Engine
-//
-//  Created by z4gon on 11/28/22.
-//
-
 // https://developer.apple.com/metal/Metal-Shading-Language-Specification.pdf
 // https://stackoverflow.com/questions/57692571/metal-vertex-shader-warning-in-swift-5
 

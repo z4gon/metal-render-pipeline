@@ -1,9 +1,4 @@
-//
-//  Types.swift
-//  Game Engine
-//
-//  Created by z4gon on 12/21/22.
-//
+// https://github.com/twohyjr/Metal-Game-Engine-Tutorial/blob/Episode6.0_Libraries/Episode6.0_Libraries/Game%20Engine/Core/Types.swift
 
 import simd
 
