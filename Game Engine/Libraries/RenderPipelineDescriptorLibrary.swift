@@ -44,7 +44,7 @@ public struct BasicRenderPipelineDescriptor: RenderPipelineDescriptor{
         
         renderPipelineDescriptor.vertexFunction = ShaderCache.Vertex(.Basic)
         renderPipelineDescriptor.fragmentFunction = ShaderCache.Fragment(.Basic)
-        renderPipelineDescriptor.vertexDescriptor = VertexDescriptorLibrary.Descriptor(.Basic)
+        renderPipelineDescriptor.vertexDescriptor = VertexDescriptorCache.Descriptor(.Basic)
         
         return renderPipelineDescriptor
     }

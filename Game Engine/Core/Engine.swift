@@ -17,7 +17,7 @@ class Engine {
         self.CommandQueue = device.makeCommandQueue()
         
         ShaderCache.Initialize()
-        VertexDescriptorLibrary.Initialize()
+        VertexDescriptorCache.Initialize()
         RenderPipelineDescriptorLibrary.Initialize()
         RenderPipelineStateLibrary.Initialize()
     }

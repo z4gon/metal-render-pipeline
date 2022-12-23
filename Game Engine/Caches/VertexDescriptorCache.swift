@@ -6,35 +6,36 @@ enum VertexDescriptorType {
     case Basic
 }
 
-class VertexDescriptorLibrary {
+class VertexDescriptorCache {
     
-    private static var vertexDescriptors: [VertexDescriptorType: VertexDescriptor] = [:]
+    private static var _vertexDescriptors: [VertexDescriptorType: VertexDescriptor] = [:]
     
     public static func Initialize(){
         createDefaultVertexDescriptors()
     }
     
     private static func createDefaultVertexDescriptors(){
-        vertexDescriptors.updateValue(BasicVertexDescriptor(), forKey: .Basic)
+        _vertexDescriptors.updateValue(BasicVertexDescriptor(), forKey: .Basic)
     }
     
     public static func Descriptor(_ vertexDescriptorType: VertexDescriptorType)->MTLVertexDescriptor{
-        return vertexDescriptors[vertexDescriptorType]!.vertexDescriptor
+        return _vertexDescriptors[vertexDescriptorType]!.vertexDescriptor
     }
     
 }
 
 protocol VertexDescriptor {
     var name: String { get }
-    var vertexDescriptor: MTLVertexDescriptor { get }
+    var vertexDescriptor: MTLVertexDescriptor! { get }
 }
 
-
-public struct BasicVertexDescriptor: VertexDescriptor{
+public struct BasicVertexDescriptor : VertexDescriptor{
     var name: String = "Basic Vertex Descriptor"
     
-    var vertexDescriptor: MTLVertexDescriptor {
-        let vertexDescriptor = MTLVertexDescriptor()
+    var vertexDescriptor: MTLVertexDescriptor!
+    
+    init(){
+        vertexDescriptor = MTLVertexDescriptor()
         
         // position
         // - first attribute, metal will use the attributes tags like so [[ attribute(0) ]]
@@ -55,7 +56,5 @@ public struct BasicVertexDescriptor: VertexDescriptor{
         // layout, how the pipeline state describes the struct
         // https://swiftunboxed.com/internals/size-stride-alignment/
         vertexDescriptor.layouts[0].stride = Vertex.stride
-        
-        return vertexDescriptor
     }
 }
