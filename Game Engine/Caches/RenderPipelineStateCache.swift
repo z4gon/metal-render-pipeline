@@ -6,9 +6,9 @@ enum RenderPipelineStateType {
     case Basic
 }
 
-class RenderPipelineStateLibrary {
+class RenderPipelineStateCache {
     
-    private static var renderPipelineStates: [RenderPipelineStateType: RenderPipelineState] = [:]
+    private static var _renderPipelineStates: [RenderPipelineStateType: RenderPipelineState] = [:]
     
     public static func Initialize(){
         createDefaultRenderPipelineStates()
@@ -16,30 +16,30 @@ class RenderPipelineStateLibrary {
     
     private static func createDefaultRenderPipelineStates(){
         
-        renderPipelineStates.updateValue(BasicRenderPipelineState(), forKey: .Basic)
+        _renderPipelineStates.updateValue(BasicRenderPipelineState(), forKey: .Basic)
         
     }
     
     public static func PipelineState(_ renderPipelineStateType: RenderPipelineStateType)->MTLRenderPipelineState{
-        return (renderPipelineStates[renderPipelineStateType]?.renderPipelineState)!
+        return (_renderPipelineStates[renderPipelineStateType]?.renderPipelineState)!
     }
     
 }
 
 protocol RenderPipelineState {
     var name: String { get }
-    var renderPipelineState: MTLRenderPipelineState { get }
+    var renderPipelineState: MTLRenderPipelineState! { get }
 }
 
 public struct BasicRenderPipelineState: RenderPipelineState {
     var name: String = "Basic Render Pipeline State"
-    var renderPipelineState: MTLRenderPipelineState {
-        var renderPipelineState: MTLRenderPipelineState!
+    var renderPipelineState: MTLRenderPipelineState!
+    
+    init(){
         do{
             renderPipelineState = try Engine.Device.makeRenderPipelineState(descriptor: RenderPipelineDescriptorCache.Descriptor(.Basic))
         }catch let error as NSError {
             print("ERROR::CREATE::RENDER_PIPELINE_STATE::__\(name)__::\(error)")
         }
-        return renderPipelineState
     }
 }
