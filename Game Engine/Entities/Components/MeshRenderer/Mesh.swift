@@ -5,5 +5,5 @@ class Mesh {
         createVertices()
     }
     
-    internal func createVertices() {}
+    func createVertices() {}
 }

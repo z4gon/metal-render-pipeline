@@ -20,7 +20,6 @@ class MeshCache {
         _meshes.updateValue(QuadMesh(), forKey: .Quad)
         
         let mesh: Mesh = QuadMesh()
-        mesh.createVertices()
     }
     
     public static func Mesh(_ meshType: MeshType)->Mesh{
@@ -29,7 +28,7 @@ class MeshCache {
 }
 
 class TriangleMesh : Mesh{
-    override internal func createVertices() {
+    override func createVertices() {
         vertices = [
             Vertex(position: float3( 0, 1,0), color: float4(1,0,0,1)),
             Vertex(position: float3(-1,-1,0), color: float4(0,1,0,1)),
@@ -39,7 +38,7 @@ class TriangleMesh : Mesh{
 }
 
 class QuadMesh : Mesh{
-    override internal func createVertices() {
+    override func createVertices() {
         vertices = [
             Vertex(position: float3( 0.5, 0.5,0), color: float4(1,0,0,1)), //Top Right
             Vertex(position: float3(-0.5, 0.5,0), color: float4(0,1,0,1)), //Top Left
