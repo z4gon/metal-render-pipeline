@@ -1,10 +1,5 @@
 import MetalKit
 
-// https://developer.apple.com/documentation/swift/simd3
-typealias float2 = SIMD2<Float>
-typealias float3 = SIMD3<Float>
-typealias float4 = SIMD4<Float>
-
 class GameView: MTKView {
     
     var renderer: GameViewRenderer!

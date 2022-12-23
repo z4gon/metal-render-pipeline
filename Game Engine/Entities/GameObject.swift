@@ -25,7 +25,7 @@ class GameObject {
     
     func render(renderCommandEncoder: MTLRenderCommandEncoder){
         
-        renderCommandEncoder.setRenderPipelineState(RenderPipelineStateLibrary.PipelineState(.Basic))
+        renderCommandEncoder.setRenderPipelineState(RenderPipelineStateCache.PipelineState(.Basic))
         renderCommandEncoder.setVertexBuffer(self.vertexBuffer, offset: 0, index: 0)
         renderCommandEncoder.drawPrimitives(type: MTLPrimitiveType.triangle, vertexStart: 0, vertexCount: self.vertices.count)
     }
