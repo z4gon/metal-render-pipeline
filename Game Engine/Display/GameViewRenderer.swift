@@ -1,7 +1,11 @@
 import MetalKit
 
 class GameViewRenderer: NSObject {
-    var gameObject: GameObject = GameObject()
+    var gameObject = GameObject(
+        components: [
+            MeshRenderer(mesh: MeshCache.Mesh(.Triangle))
+        ]
+    )
 }
 
 // we will delegate the rendering to this class

@@ -22,7 +22,7 @@ class ShaderCache {
         createDefaultShaders()
     }
     
-    public static func createDefaultShaders(){
+    private static func createDefaultShaders(){
         _vertexShaders.updateValue(Shader(name: "Basic Vertex Shader", functionName: "basic_vertex_shader"), forKey: .Basic)
         _fragmentShaders.updateValue(Shader(name: "Basic Fragment Shader", functionName: "basic_fragment_shader"), forKey: .Basic)
     }

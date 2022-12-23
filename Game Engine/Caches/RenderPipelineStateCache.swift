@@ -15,9 +15,7 @@ class RenderPipelineStateCache {
     }
     
     private static func createDefaultRenderPipelineStates(){
-        
         _renderPipelineStates.updateValue(BasicRenderPipelineState(), forKey: .Basic)
-        
     }
     
     public static func PipelineState(_ renderPipelineStateType: RenderPipelineStateType)->MTLRenderPipelineState{

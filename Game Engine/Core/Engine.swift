@@ -16,6 +16,7 @@ class Engine {
         // create the command queue to handle commands for the GPU
         self.CommandQueue = device.makeCommandQueue()
         
+        MeshCache.Initialize()
         ShaderCache.Initialize()
         VertexDescriptorCache.Initialize()
         RenderPipelineDescriptorCache.Initialize()
