@@ -42,8 +42,8 @@ public struct BasicRenderPipelineDescriptor: RenderPipelineDescriptor{
         // make the pixel format match the device
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = Preferences.PixelFormat
         
-        renderPipelineDescriptor.vertexFunction = ShaderLibrary.Vertex(.Basic)
-        renderPipelineDescriptor.fragmentFunction = ShaderLibrary.Fragment(.Basic)
+        renderPipelineDescriptor.vertexFunction = ShaderCache.Vertex(.Basic)
+        renderPipelineDescriptor.fragmentFunction = ShaderCache.Fragment(.Basic)
         renderPipelineDescriptor.vertexDescriptor = VertexDescriptorLibrary.Descriptor(.Basic)
         
         return renderPipelineDescriptor
