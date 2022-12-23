@@ -18,7 +18,7 @@ class Engine {
         
         ShaderCache.Initialize()
         VertexDescriptorCache.Initialize()
-        RenderPipelineDescriptorLibrary.Initialize()
+        RenderPipelineDescriptorCache.Initialize()
         RenderPipelineStateLibrary.Initialize()
     }
 }

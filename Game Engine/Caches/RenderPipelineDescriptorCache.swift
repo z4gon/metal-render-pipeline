@@ -6,38 +6,38 @@ enum RenderPipelineDescriptorType {
     case Basic
 }
 
-class RenderPipelineDescriptorLibrary {
+class RenderPipelineDescriptorCache {
     
-    private static var renderPipelineDescriptors: [RenderPipelineDescriptorType : RenderPipelineDescriptor] = [:]
+    private static var _renderPipelineDescriptors: [RenderPipelineDescriptorType : RenderPipelineDescriptor] = [:]
     
     public static func Initialize() {
         createDefaultRenderPipelineDescriptors()
     }
     
     private static func createDefaultRenderPipelineDescriptors() {
-        
-        renderPipelineDescriptors.updateValue(BasicRenderPipelineDescriptor(), forKey: .Basic)
-        
+        _renderPipelineDescriptors.updateValue(BasicRenderPipelineDescriptor(), forKey: .Basic)
     }
     
     public static func Descriptor(_ renderPipelineDescriptorType: RenderPipelineDescriptorType)->MTLRenderPipelineDescriptor{
-        return renderPipelineDescriptors[renderPipelineDescriptorType]!.renderPipelineDescriptor
+        return _renderPipelineDescriptors[renderPipelineDescriptorType]!.renderPipelineDescriptor
     }
     
 }
 
 protocol RenderPipelineDescriptor {
     var name: String { get }
-    var renderPipelineDescriptor: MTLRenderPipelineDescriptor { get }
+    var renderPipelineDescriptor: MTLRenderPipelineDescriptor! { get }
 }
 
 public struct BasicRenderPipelineDescriptor: RenderPipelineDescriptor{
     var name: String = "Basic Render Pipeline Descriptor"
     
-    var renderPipelineDescriptor: MTLRenderPipelineDescriptor {
+    var renderPipelineDescriptor: MTLRenderPipelineDescriptor!
+    
+    init(){
         
         // create the descriptor for the render pipeline
-        let renderPipelineDescriptor = MTLRenderPipelineDescriptor()
+        renderPipelineDescriptor = MTLRenderPipelineDescriptor()
         
         // make the pixel format match the device
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = Preferences.PixelFormat
@@ -45,7 +45,5 @@ public struct BasicRenderPipelineDescriptor: RenderPipelineDescriptor{
         renderPipelineDescriptor.vertexFunction = ShaderCache.Vertex(.Basic)
         renderPipelineDescriptor.fragmentFunction = ShaderCache.Fragment(.Basic)
         renderPipelineDescriptor.vertexDescriptor = VertexDescriptorCache.Descriptor(.Basic)
-        
-        return renderPipelineDescriptor
     }
 }
