@@ -133,12 +133,12 @@
 			path = Display;
 			sourceTree = "<group>";
 		};
-		7F2DCF3F29542AAB00B72131 /* Game Objects */ = {
+		7F2DCF3F29542AAB00B72131 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
 				7F2DCF4029542AC700B72131 /* GameObject.swift */,
 			);
-			path = "Game Objects";
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		7F2DCF482956083D00B72131 /* Caches */ = {
@@ -175,7 +175,7 @@
 		7F8910BD29347D5600E4C8ED /* Game Engine */ = {
 			isa = PBXGroup;
 			children = (
-				7F2DCF3F29542AAB00B72131 /* Game Objects */,
+				7F2DCF3F29542AAB00B72131 /* Entities */,
 				7F2DCF2F2953D53700B72131 /* Core */,
 				7F2DCF482956083D00B72131 /* Caches */,
 				7F2DCF312953D58200B72131 /* Shaders */,
