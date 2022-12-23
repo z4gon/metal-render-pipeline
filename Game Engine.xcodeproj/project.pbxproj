@@ -25,6 +25,7 @@
 		7F2DCF5D295652D000B72131 /* Sizeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2DCF5C295652D000B72131 /* Sizeable.swift */; };
 		7F2DCF602956532E00B72131 /* ClearColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2DCF5F2956532E00B72131 /* ClearColors.swift */; };
 		7F2DCF65295653F700B72131 /* Vertex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2DCF64295653F700B72131 /* Vertex.swift */; };
+		7F2DCF672956637300B72131 /* Transform.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2DCF662956637300B72131 /* Transform.swift */; };
 		7F8910BF29347D5600E4C8ED /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F8910BE29347D5600E4C8ED /* AppDelegate.swift */; };
 		7F8910C429347D5600E4C8ED /* Game_Engine.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7F8910C229347D5600E4C8ED /* Game_Engine.xcdatamodeld */; };
 		7F8910C629347D5600E4C8ED /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F8910C529347D5600E4C8ED /* Assets.xcassets */; };
@@ -70,6 +71,7 @@
 		7F2DCF5C295652D000B72131 /* Sizeable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sizeable.swift; sourceTree = "<group>"; };
 		7F2DCF5F2956532E00B72131 /* ClearColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClearColors.swift; sourceTree = "<group>"; };
 		7F2DCF64295653F700B72131 /* Vertex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vertex.swift; sourceTree = "<group>"; };
+		7F2DCF662956637300B72131 /* Transform.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transform.swift; sourceTree = "<group>"; };
 		7F8910BB29347D5600E4C8ED /* Game Engine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Game Engine.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F8910BE29347D5600E4C8ED /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7F8910C329347D5600E4C8ED /* Game_Engine.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Game_Engine.xcdatamodel; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 		7F2DCF3F29542AAB00B72131 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				7F2DCF662956637300B72131 /* Transform.swift */,
 				7F2DCF4029542AC700B72131 /* GameObject.swift */,
 				7F2DCF5329563BAE00B72131 /* Components */,
 			);
@@ -395,6 +398,7 @@
 				7F1AA6ED2934924200BD3501 /* GameView.swift in Sources */,
 				7F2DCF5D295652D000B72131 /* Sizeable.swift in Sources */,
 				7F2DCF2E2953C06600B72131 /* Float3.swift in Sources */,
+				7F2DCF672956637300B72131 /* Transform.swift in Sources */,
 				7F2DCF4129542AC700B72131 /* GameObject.swift in Sources */,
 				7F8910C429347D5600E4C8ED /* Game_Engine.xcdatamodeld in Sources */,
 				7F2DCF5629563BCB00B72131 /* Mesh.swift in Sources */,

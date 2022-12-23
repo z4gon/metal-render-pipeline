@@ -11,7 +11,7 @@ class MeshCache {
     
     private static var _meshes: [MeshType: Mesh] = [:]
     
-    public static func Initialize(){
+    public static func initialize(){
         createDefaultMeshes()
     }
     
@@ -22,7 +22,7 @@ class MeshCache {
         let mesh: Mesh = QuadMesh()
     }
     
-    public static func Mesh(_ meshType: MeshType)->Mesh{
+    public static func getMesh(_ meshType: MeshType)->Mesh{
         return _meshes[meshType]!
     }
 }

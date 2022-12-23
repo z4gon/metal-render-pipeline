@@ -7,13 +7,13 @@ class GameView: MTKView {
     required init(coder: NSCoder) {
         super.init(coder: coder)
         
-        self.device = MTLCreateSystemDefaultDevice()
-        self.clearColor = Preferences.ClearColor
-        self.colorPixelFormat = Preferences.PixelFormat
+        device = MTLCreateSystemDefaultDevice()
+        clearColor = Preferences.ClearColor
+        colorPixelFormat = Preferences.PixelFormat
         
-        Engine.Initialize(device: self.device!)
+        Engine.initialize(device: device!)
         
-        self.renderer = GameViewRenderer()
-        self.delegate = self.renderer
+        renderer = GameViewRenderer()
+        delegate = renderer
     }
 }

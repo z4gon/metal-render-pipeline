@@ -3,7 +3,7 @@ import MetalKit
 class GameViewRenderer: NSObject {
     var gameObject = GameObject(
         components: [
-            MeshRenderer(mesh: MeshCache.Mesh(.Triangle))
+            MeshRenderer(mesh: MeshCache.getMesh(.Quad))
         ]
     )
 }
@@ -18,11 +18,11 @@ extension GameViewRenderer: MTKViewDelegate {
     func draw(in view: MTKView){
         guard let drawable = view.currentDrawable, let renderPassDescriptor = view.currentRenderPassDescriptor else { return }
         
-        let commandBuffer = Engine.CommandQueue.makeCommandBuffer()
+        let commandBuffer = Engine.commandQueue.makeCommandBuffer()
         
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
         
-        self.gameObject.render(renderCommandEncoder: renderCommandEncoder!)
+        gameObject.render(renderCommandEncoder: renderCommandEncoder!)
         
         renderCommandEncoder?.endEncoding()
         commandBuffer?.present(drawable)

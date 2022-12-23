@@ -10,7 +10,7 @@ class VertexDescriptorCache {
     
     private static var _vertexDescriptors: [VertexDescriptorType: VertexDescriptor] = [:]
     
-    public static func Initialize(){
+    public static func initialize(){
         createDefaultVertexDescriptors()
     }
     
@@ -18,7 +18,7 @@ class VertexDescriptorCache {
         _vertexDescriptors.updateValue(BasicVertexDescriptor(), forKey: .Basic)
     }
     
-    public static func Descriptor(_ vertexDescriptorType: VertexDescriptorType)->MTLVertexDescriptor{
+    public static func getDescriptor(_ vertexDescriptorType: VertexDescriptorType)->MTLVertexDescriptor{
         return _vertexDescriptors[vertexDescriptorType]!.vertexDescriptor
     }
     
