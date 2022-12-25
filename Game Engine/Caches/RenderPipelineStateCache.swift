@@ -21,7 +21,6 @@ class RenderPipelineStateCache {
     public static func getPipelineState(_ renderPipelineStateType: RenderPipelineStateType)->MTLRenderPipelineState{
         return (_renderPipelineStates[renderPipelineStateType]?.renderPipelineState)!
     }
-    
 }
 
 protocol RenderPipelineState {

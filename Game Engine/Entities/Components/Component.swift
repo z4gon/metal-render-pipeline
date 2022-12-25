@@ -1,6 +1,11 @@
 import MetalKit
 
-class Component {
-    public func update(deltaTime: Float) {}
-    public func render(renderCommandEncoder: MTLRenderCommandEncoder) {}
+protocol Component { }
+
+protocol RenderableComponent : Component {
+    func render(renderCommandEncoder: MTLRenderCommandEncoder)
+}
+
+protocol UpdatableComponent : Component {
+    func update(deltaTime: Float)
 }

@@ -18,8 +18,6 @@ class MeshCache {
     private static func createDefaultMeshes(){
         _meshes.updateValue(TriangleMesh(), forKey: .Triangle)
         _meshes.updateValue(QuadMesh(), forKey: .Quad)
-        
-        let mesh: Mesh = QuadMesh()
     }
     
     public static func getMesh(_ meshType: MeshType)->Mesh{

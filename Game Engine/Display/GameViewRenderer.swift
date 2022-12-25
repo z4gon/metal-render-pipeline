@@ -1,7 +1,7 @@
 import MetalKit
 
 class GameViewRenderer: NSObject {
-    var gameObject = GameObject(
+    var rootGameObject = GameObject(
         components: [
             MeshRenderer(mesh: MeshCache.getMesh(.Quad))
         ]
@@ -22,7 +22,7 @@ extension GameViewRenderer: MTKViewDelegate {
         
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
         
-        gameObject.render(renderCommandEncoder: renderCommandEncoder!)
+        rootGameObject.render(renderCommandEncoder: renderCommandEncoder!)
         
         renderCommandEncoder?.endEncoding()
         commandBuffer?.present(drawable)
