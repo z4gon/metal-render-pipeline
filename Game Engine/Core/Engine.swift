@@ -4,21 +4,22 @@ import MetalKit
 
 class Engine {
     
-    public static var Device: MTLDevice!
-    public static var CommandQueue: MTLCommandQueue!
+    public static var device: MTLDevice!
+    public static var commandQueue: MTLCommandQueue!
     
-    public static func Initialize(device: MTLDevice){
+    public static func initialize(device: MTLDevice){
         
         // device is an abstract representation of the GPU
         // allows to create Metal GPU objects and send them down to the GPU
-        self.Device = device
+        self.device = device
         
         // create the command queue to handle commands for the GPU
-        self.CommandQueue = device.makeCommandQueue()
+        commandQueue = device.makeCommandQueue()
         
-        ShaderCache.Initialize()
-        VertexDescriptorCache.Initialize()
-        RenderPipelineDescriptorCache.Initialize()
-        RenderPipelineStateCache.Initialize()
+        MeshCache.initialize()
+        ShaderCache.initialize()
+        VertexDescriptorCache.initialize()
+        RenderPipelineDescriptorCache.initialize()
+        RenderPipelineStateCache.initialize()
     }
 }

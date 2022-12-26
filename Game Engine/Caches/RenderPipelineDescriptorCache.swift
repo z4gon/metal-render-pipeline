@@ -10,7 +10,7 @@ class RenderPipelineDescriptorCache {
     
     private static var _renderPipelineDescriptors: [RenderPipelineDescriptorType : RenderPipelineDescriptor] = [:]
     
-    public static func Initialize() {
+    public static func initialize() {
         createDefaultRenderPipelineDescriptors()
     }
     
@@ -18,7 +18,7 @@ class RenderPipelineDescriptorCache {
         _renderPipelineDescriptors.updateValue(BasicRenderPipelineDescriptor(), forKey: .Basic)
     }
     
-    public static func Descriptor(_ renderPipelineDescriptorType: RenderPipelineDescriptorType)->MTLRenderPipelineDescriptor{
+    public static func getDescriptor(_ renderPipelineDescriptorType: RenderPipelineDescriptorType)->MTLRenderPipelineDescriptor{
         return _renderPipelineDescriptors[renderPipelineDescriptorType]!.renderPipelineDescriptor
     }
     
@@ -42,8 +42,8 @@ public struct BasicRenderPipelineDescriptor: RenderPipelineDescriptor{
         // make the pixel format match the device
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = Preferences.PixelFormat
         
-        renderPipelineDescriptor.vertexFunction = ShaderCache.Vertex(.Basic)
-        renderPipelineDescriptor.fragmentFunction = ShaderCache.Fragment(.Basic)
-        renderPipelineDescriptor.vertexDescriptor = VertexDescriptorCache.Descriptor(.Basic)
+        renderPipelineDescriptor.vertexFunction = ShaderCache.getVertexFunction(.Basic)
+        renderPipelineDescriptor.fragmentFunction = ShaderCache.getFragmentFunction(.Basic)
+        renderPipelineDescriptor.vertexDescriptor = VertexDescriptorCache.getDescriptor(.Basic)
     }
 }

@@ -1,0 +1,3 @@
+import MetalKit
+
+class Component { }

@@ -10,20 +10,17 @@ class RenderPipelineStateCache {
     
     private static var _renderPipelineStates: [RenderPipelineStateType: RenderPipelineState] = [:]
     
-    public static func Initialize(){
+    public static func initialize(){
         createDefaultRenderPipelineStates()
     }
     
     private static func createDefaultRenderPipelineStates(){
-        
         _renderPipelineStates.updateValue(BasicRenderPipelineState(), forKey: .Basic)
-        
     }
     
-    public static func PipelineState(_ renderPipelineStateType: RenderPipelineStateType)->MTLRenderPipelineState{
+    public static func getPipelineState(_ renderPipelineStateType: RenderPipelineStateType)->MTLRenderPipelineState{
         return (_renderPipelineStates[renderPipelineStateType]?.renderPipelineState)!
     }
-    
 }
 
 protocol RenderPipelineState {
@@ -37,7 +34,7 @@ public struct BasicRenderPipelineState: RenderPipelineState {
     
     init(){
         do{
-            renderPipelineState = try Engine.Device.makeRenderPipelineState(descriptor: RenderPipelineDescriptorCache.Descriptor(.Basic))
+            renderPipelineState = try Engine.device.makeRenderPipelineState(descriptor: RenderPipelineDescriptorCache.getDescriptor(.Basic))
         }catch let error as NSError {
             print("ERROR::CREATE::RENDER_PIPELINE_STATE::__\(name)__::\(error)")
         }

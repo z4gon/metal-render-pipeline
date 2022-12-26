@@ -12,26 +12,26 @@ enum FragmentShaderType {
 
 class ShaderCache {
     
-    public static var DefaultLibrary: MTLLibrary!
+    public static var defaultLibrary: MTLLibrary!
     
     private static var _vertexShaders: [VertexShaderType: Shader] = [:]
     private static var _fragmentShaders: [FragmentShaderType: Shader] = [:]
     
-    public static func Initialize(){
-        DefaultLibrary = Engine.Device.makeDefaultLibrary()
+    public static func initialize(){
+        defaultLibrary = Engine.device.makeDefaultLibrary()
         createDefaultShaders()
     }
     
-    public static func createDefaultShaders(){
+    private static func createDefaultShaders(){
         _vertexShaders.updateValue(Shader(name: "Basic Vertex Shader", functionName: "basic_vertex_shader"), forKey: .Basic)
         _fragmentShaders.updateValue(Shader(name: "Basic Fragment Shader", functionName: "basic_fragment_shader"), forKey: .Basic)
     }
     
-    public static func Vertex(_ vertexShaderType: VertexShaderType)->MTLFunction{
+    public static func getVertexFunction(_ vertexShaderType: VertexShaderType)->MTLFunction{
         return _vertexShaders[vertexShaderType]!.function
     }
     
-    public static func Fragment(_ fragmentShaderType: FragmentShaderType)->MTLFunction{
+    public static func getFragmentFunction(_ fragmentShaderType: FragmentShaderType)->MTLFunction{
         return _fragmentShaders[fragmentShaderType]!.function
     }
 }
@@ -48,7 +48,7 @@ public struct Shader {
         // at compile time it will pick the right functions by matching the function name
         self.functionName = functionName
         
-        self.function = ShaderCache.DefaultLibrary.makeFunction(name: functionName)
-        self.function?.label = name
+        function = ShaderCache.defaultLibrary.makeFunction(name: functionName)
+        function?.label = name
     }
 }
