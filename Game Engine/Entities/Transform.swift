@@ -8,27 +8,21 @@ class Transform {
     }
     
     public func update(deltaTime: Float){
+        for child in children {
+            child.update(deltaTime: deltaTime)
+        }
+        
         if let updatableSelf = self as? Updatable {
-            
-            for child in children {
-                if let updatableChild = child as? Updatable {
-                    updatableChild.doUpdate(deltaTime: deltaTime)
-                }
-            }
-            
             updatableSelf.doUpdate(deltaTime: deltaTime)
         }
     }
     
     public func render(renderCommandEncoder: MTLRenderCommandEncoder){
+        for child in children {
+            child.render(renderCommandEncoder: renderCommandEncoder)
+        }
+        
         if let renderableSelf = self as? Renderable {
-            
-            for child in children {
-                if let renderableChild = child as? Renderable {
-                    renderableChild.doRender(renderCommandEncoder: renderCommandEncoder)
-                }
-            }
-            
             renderableSelf.doRender(renderCommandEncoder: renderCommandEncoder)
         }
     }
