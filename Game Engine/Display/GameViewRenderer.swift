@@ -1,11 +1,16 @@
 import MetalKit
 
 class GameViewRenderer: NSObject {
-    var rootGameObject = GameObject(
-        components: [
-            MeshRenderer(mesh: MeshCache.getMesh(.Quad))
-        ]
-    )
+    
+    private var _rootGameObject: Transform;
+    
+    override init() {
+        _rootGameObject = GameObject()
+        let meshRenderer = MeshRenderer(mesh: MeshCache.getMesh(.Quad))
+        (_rootGameObject as? GameObject)!.addComponent(component: meshRenderer)
+        
+        super.init()
+    }
 }
 
 // we will delegate the rendering to this class
@@ -22,7 +27,7 @@ extension GameViewRenderer: MTKViewDelegate {
         
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
         
-        rootGameObject.render(renderCommandEncoder: renderCommandEncoder!)
+        _rootGameObject.render(renderCommandEncoder: renderCommandEncoder!)
         
         renderCommandEncoder?.endEncoding()
         commandBuffer?.present(drawable)

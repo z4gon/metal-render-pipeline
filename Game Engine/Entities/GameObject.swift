@@ -4,10 +4,6 @@ class GameObject : Transform {
     
     public var components: [Component]! = []
     
-    init(components: [Component]){
-        self.components = components
-    }
-    
     public func addComponent(component: Component){
         components.append(component)
     }
