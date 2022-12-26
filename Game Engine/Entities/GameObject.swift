@@ -11,23 +11,23 @@ class GameObject : Transform {
     public func addComponent(component: Component){
         components.append(component)
     }
-    
-    public func update(deltaTime: Float){
+}
+
+extension GameObject : Updatable {
+    public func doUpdate(deltaTime: Float){
         for component in components {
-            if let updatableComponent = component as? UpdatableComponent {
-                updatableComponent.update(deltaTime: deltaTime)
+            if let updatableComponent = component as? Updatable {
+                updatableComponent.doUpdate(deltaTime: deltaTime)
             }
         }
-        
-        // for child in children {
-        //     children.update(deltaTime: deltaTime)
-        // }
     }
-    
-    public func render(renderCommandEncoder: MTLRenderCommandEncoder){
+}
+
+extension GameObject : Renderable {
+    public func doRender(renderCommandEncoder: MTLRenderCommandEncoder){
         for component in components {
-            if let renderableComponent = component as? RenderableComponent {
-                renderableComponent.render(renderCommandEncoder: renderCommandEncoder)
+            if let renderableComponent = component as? Renderable {
+                renderableComponent.doRender(renderCommandEncoder: renderCommandEncoder)
             }
         }
     }
