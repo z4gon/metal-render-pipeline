@@ -1,3 +1,5 @@
 import MetalKit
 
-class Component { }
+class Component {
+    public var gameObject: GameObject!
+}

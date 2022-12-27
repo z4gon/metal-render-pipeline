@@ -1,11 +1,11 @@
 import MetalKit
 
 class GameObject : Transform {
-    
     public var components: [Component]! = []
     
     public func addComponent(component: Component){
         components.append(component)
+        component.gameObject = self
     }
 }
 

@@ -1,6 +1,10 @@
 import MetalKit
 
 class Transform {
+    public var position: float3 = float3(repeating: 0);
+    public var rotation: float3 = float3(repeating: 0);
+    public var scale: float3 = float3(repeating: 1);
+    
     public var children: [Transform]! = []
     
     public func addChildren(transform: Transform){

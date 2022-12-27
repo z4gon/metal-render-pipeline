@@ -15,14 +15,20 @@ struct FragmentData {
     float4 color;
 };
 
+struct ModelConstants {
+    float4x4 modelMatrix;
+};
+
 vertex FragmentData basic_vertex_shader(
   // metal can infer the data because we are describing it using the vertex descriptor
-  const VertexData IN [[ stage_in ]]
+  const VertexData IN [[ stage_in ]],
+  constant ModelConstants &modelConstants [[ buffer(1) ]]
 ){
     FragmentData OUT;
     
     // return the vertex position in homogeneous screen space
-    OUT.position = float4(IN.position, 1);
+    OUT.position = modelConstants.modelMatrix * float4(IN.position, 1);
+    
     OUT.color = IN.color;
     
     return OUT;
