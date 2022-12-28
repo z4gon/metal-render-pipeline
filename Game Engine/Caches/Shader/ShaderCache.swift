@@ -2,14 +2,6 @@
 
 import MetalKit
 
-enum VertexShaderType{
-    case Basic
-}
-
-enum FragmentShaderType {
-    case Basic
-}
-
 class ShaderCache {
     
     public static var defaultLibrary: MTLLibrary!
@@ -33,22 +25,5 @@ class ShaderCache {
     
     public static func getFragmentFunction(_ fragmentShaderType: FragmentShaderType)->MTLFunction{
         return _fragmentShaders[fragmentShaderType]!.function
-    }
-}
-
-public struct Shader {
-    public var name: String!
-    public var functionName: String!
-    
-    public var function: MTLFunction!
-    
-    init(name: String, functionName: String){
-        self.name = name
-        
-        // at compile time it will pick the right functions by matching the function name
-        self.functionName = functionName
-        
-        function = ShaderCache.defaultLibrary.makeFunction(name: functionName)
-        function?.label = name
     }
 }
