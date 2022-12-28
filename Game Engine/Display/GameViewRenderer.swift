@@ -6,8 +6,13 @@ class GameViewRenderer: NSObject {
     
     override init() {
         _rootGameObject = GameObject()
+        let gameObject = (_rootGameObject as? GameObject)!
+        
         let meshRenderer = MeshRenderer(mesh: MeshCache.getMesh(.Quad))
-        (_rootGameObject as? GameObject)!.addComponent(component: meshRenderer)
+        gameObject.addComponent(component: meshRenderer)
+        
+        let myComponent = MyComponent()
+        gameObject.addComponent(component: myComponent)
         
         super.init()
     }
@@ -27,6 +32,7 @@ extension GameViewRenderer: MTKViewDelegate {
         
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
         
+        _rootGameObject.update(deltaTime: 1.0 / Float(view.preferredFramesPerSecond))
         _rootGameObject.render(renderCommandEncoder: renderCommandEncoder!)
         
         renderCommandEncoder?.endEncoding()
