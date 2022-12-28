@@ -4,13 +4,15 @@ class SandboxScene : Scene {
     
     override func buildScene() {
         
-        for y in -5..<5 {
-            for x in -5..<5 {
-                let gameObject = QuadGameObject()
+        let count: Int = 5
+        
+        for y in -count..<count {
+            for x in -count..<count {
+                let gameObject = TriGameObject()
                 
-                gameObject.position.y = Float(Float(y) + 0.5) / 5
-                gameObject.position.x = Float(Float(x) + 0.5) / 5
-                gameObject.scale = float3(repeating: 0.15)
+                gameObject.position.y = Float(Float(y) + 0.5) / Float(count)
+                gameObject.position.x = Float(Float(x) + 0.5) / Float(count)
+                gameObject.scale = float3(repeating: 0.1)
                 
                 addChild(transform: gameObject)
             }
