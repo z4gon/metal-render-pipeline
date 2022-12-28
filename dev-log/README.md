@@ -7,3 +7,4 @@
 - [Part 5: Game Object, Libraries and Renderer](./part-5/README.md)
 - [Part 6: Transform, Components, MeshRenderer](./part-6/README.md)
 - [Part 7: 3D Affine Transformation Matrices](./part-7/README.md)
+- [Part 8: Scenes](./part-8/README.md)

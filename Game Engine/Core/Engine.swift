@@ -21,5 +21,7 @@ class Engine {
         VertexDescriptorCache.initialize()
         RenderPipelineDescriptorCache.initialize()
         RenderPipelineStateCache.initialize()
+        
+        SceneManager.initialize(Preferences.InitialScene)
     }
 }

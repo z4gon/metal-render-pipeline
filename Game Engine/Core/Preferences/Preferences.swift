@@ -9,4 +9,6 @@ class Preferences {
     
     // how pixels are stored
     public static var PixelFormat: MTLPixelFormat = MTLPixelFormat.bgra8Unorm
+    
+    public static var InitialScene: SceneType = SceneType.Sandbox
 }
