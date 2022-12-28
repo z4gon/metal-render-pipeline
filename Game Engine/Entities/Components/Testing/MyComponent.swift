@@ -6,8 +6,9 @@ class MyComponent : Component, Updatable {
     
     func doUpdate(deltaTime: Float) {
         time += deltaTime
-        let deltaPosition = cos(time)
         
-        gameObject.position = float3(deltaPosition, gameObject.position.y, gameObject.position.z)
+        gameObject.position = float3(cos(time), gameObject.position.y, gameObject.position.z)
+        gameObject.scale = float3(repeating: sin(time))
+        gameObject.rotation = float3(gameObject.rotation.x, gameObject.rotation.y, sin(time))
     }
 }

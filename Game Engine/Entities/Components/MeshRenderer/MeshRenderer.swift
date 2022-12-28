@@ -14,7 +14,12 @@ class MeshRenderer : Component, Renderable {
     func updateModelConstants() {
         var modelMatrix: float4x4 = matrix_identity_float4x4
         
-        modelMatrix.translate(direction: gameObject.position)
+        modelMatrix.translate(position: gameObject.position)
+        modelMatrix.scale(scale: gameObject.scale)
+        
+        modelMatrix.rotateX(angle: gameObject.rotation.x)
+        modelMatrix.rotateY(angle: gameObject.rotation.y)
+        modelMatrix.rotateZ(angle: gameObject.rotation.z)
         
         _modelConstants.modelMatrix = modelMatrix
     }
