@@ -15,5 +15,11 @@ class SandboxScene : Scene {
                 addChild(transform: gameObject)
             }
         }
+        
+        // track input
+        let trackerGameObject = GameObject()
+        let trackerComponent = InputTrackerComponent()
+        trackerGameObject.addComponent(component: trackerComponent)
+        addChild(transform: trackerGameObject)
     }
 }
