@@ -13,7 +13,7 @@ class GameView: MTKView {
         
         Engine.initialize(device: device!)
         
-        renderer = GameViewRenderer()
+        renderer = GameViewRenderer(self)
         delegate = renderer
     }
 }

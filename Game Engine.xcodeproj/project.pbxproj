@@ -16,6 +16,13 @@
 		7F106D92295C876F00AAB0E6 /* SceneManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106D91295C876F00AAB0E6 /* SceneManager.swift */; };
 		7F106D94295C880500AAB0E6 /* SandboxScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106D93295C880500AAB0E6 /* SandboxScene.swift */; };
 		7F106D97295C8EF500AAB0E6 /* QuadGameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106D96295C8EF500AAB0E6 /* QuadGameObject.swift */; };
+		7F106D99295CB4C400AAB0E6 /* GameViewInputExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106D98295CB4C400AAB0E6 /* GameViewInputExtension.swift */; };
+		7F106D9C295CB50A00AAB0E6 /* KeyCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106D9B295CB50A00AAB0E6 /* KeyCodes.swift */; };
+		7F106D9E295CB58B00AAB0E6 /* Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106D9D295CB58B00AAB0E6 /* Keyboard.swift */; };
+		7F106DA0295CB5E900AAB0E6 /* Mouse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106D9F295CB5E900AAB0E6 /* Mouse.swift */; };
+		7F106DA2295CBB2700AAB0E6 /* InputTrackerComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106DA1295CBB2700AAB0E6 /* InputTrackerComponent.swift */; };
+		7F106DA4295CBF9400AAB0E6 /* TriGameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106DA3295CBF9400AAB0E6 /* TriGameObject.swift */; };
+		7F106DA6295CC01C00AAB0E6 /* FaceMouseComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106DA5295CC01C00AAB0E6 /* FaceMouseComponent.swift */; };
 		7F1AA6ED2934924200BD3501 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1AA6EC2934924200BD3501 /* GameView.swift */; };
 		7F1AA6EF2934A38500BD3501 /* MyShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 7F1AA6EE2934A38500BD3501 /* MyShaders.metal */; };
 		7F2DCF2E2953C06600B72131 /* Float3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2DCF2D2953C06600B72131 /* Float3.swift */; };
@@ -71,6 +78,13 @@
 		7F106D91295C876F00AAB0E6 /* SceneManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneManager.swift; sourceTree = "<group>"; };
 		7F106D93295C880500AAB0E6 /* SandboxScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SandboxScene.swift; sourceTree = "<group>"; };
 		7F106D96295C8EF500AAB0E6 /* QuadGameObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadGameObject.swift; sourceTree = "<group>"; };
+		7F106D98295CB4C400AAB0E6 /* GameViewInputExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewInputExtension.swift; sourceTree = "<group>"; };
+		7F106D9B295CB50A00AAB0E6 /* KeyCodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyCodes.swift; sourceTree = "<group>"; };
+		7F106D9D295CB58B00AAB0E6 /* Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keyboard.swift; sourceTree = "<group>"; };
+		7F106D9F295CB5E900AAB0E6 /* Mouse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mouse.swift; sourceTree = "<group>"; };
+		7F106DA1295CBB2700AAB0E6 /* InputTrackerComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InputTrackerComponent.swift; sourceTree = "<group>"; };
+		7F106DA3295CBF9400AAB0E6 /* TriGameObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriGameObject.swift; sourceTree = "<group>"; };
+		7F106DA5295CC01C00AAB0E6 /* FaceMouseComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceMouseComponent.swift; sourceTree = "<group>"; };
 		7F1AA6EC2934924200BD3501 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		7F1AA6EE2934A38500BD3501 /* MyShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MyShaders.metal; sourceTree = "<group>"; };
 		7F2DCF2D2953C06600B72131 /* Float3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Float3.swift; sourceTree = "<group>"; };
@@ -140,9 +154,9 @@
 		7F106D86295B8DB300AAB0E6 /* Testing Objects */ = {
 			isa = PBXGroup;
 			children = (
-				7F106D87295B8DE900AAB0E6 /* MoveComponent.swift */,
 				7F106D93295C880500AAB0E6 /* SandboxScene.swift */,
-				7F106D96295C8EF500AAB0E6 /* QuadGameObject.swift */,
+				7F106DA8295CC02800AAB0E6 /* Prefabs */,
+				7F106DA7295CC02300AAB0E6 /* Components */,
 			);
 			path = "Testing Objects";
 			sourceTree = "<group>";
@@ -169,6 +183,36 @@
 				7F106D91295C876F00AAB0E6 /* SceneManager.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		7F106D9A295CB4E300AAB0E6 /* Input */ = {
+			isa = PBXGroup;
+			children = (
+				7F106D98295CB4C400AAB0E6 /* GameViewInputExtension.swift */,
+				7F106D9B295CB50A00AAB0E6 /* KeyCodes.swift */,
+				7F106D9D295CB58B00AAB0E6 /* Keyboard.swift */,
+				7F106D9F295CB5E900AAB0E6 /* Mouse.swift */,
+			);
+			path = Input;
+			sourceTree = "<group>";
+		};
+		7F106DA7295CC02300AAB0E6 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				7F106D87295B8DE900AAB0E6 /* MoveComponent.swift */,
+				7F106DA5295CC01C00AAB0E6 /* FaceMouseComponent.swift */,
+				7F106DA1295CBB2700AAB0E6 /* InputTrackerComponent.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		7F106DA8295CC02800AAB0E6 /* Prefabs */ = {
+			isa = PBXGroup;
+			children = (
+				7F106D96295C8EF500AAB0E6 /* QuadGameObject.swift */,
+				7F106DA3295CBF9400AAB0E6 /* TriGameObject.swift */,
+			);
+			path = Prefabs;
 			sourceTree = "<group>";
 		};
 		7F1AA6EB29348BDA00BD3501 /* Other Files */ = {
@@ -302,6 +346,7 @@
 				7F106D95295C896600AAB0E6 /* Managers */,
 				7F2DCF482956083D00B72131 /* Caches */,
 				7F2DCF312953D58200B72131 /* Shaders */,
+				7F106D9A295CB4E300AAB0E6 /* Input */,
 				7F2DCF322953D59300B72131 /* Display */,
 				7F1AA6EB29348BDA00BD3501 /* Other Files */,
 			);
@@ -455,6 +500,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F106D9C295CB50A00AAB0E6 /* KeyCodes.swift in Sources */,
+				7F106DA0295CB5E900AAB0E6 /* Mouse.swift in Sources */,
+				7F106DA6295CC01C00AAB0E6 /* FaceMouseComponent.swift in Sources */,
 				7F1AA6EF2934A38500BD3501 /* MyShaders.metal in Sources */,
 				7F2DCF5829563BE000B72131 /* MeshRenderer.swift in Sources */,
 				7F106D85295A458000AAB0E6 /* Updatable.swift in Sources */,
@@ -468,9 +516,11 @@
 				7F106D92295C876F00AAB0E6 /* SceneManager.swift in Sources */,
 				7F1AA6ED2934924200BD3501 /* GameView.swift in Sources */,
 				7F106D8D295B947500AAB0E6 /* ModelConstants.swift in Sources */,
+				7F106D99295CB4C400AAB0E6 /* GameViewInputExtension.swift in Sources */,
 				7F2DCF5D295652D000B72131 /* Sizeable.swift in Sources */,
 				7F2DCF2E2953C06600B72131 /* Float3.swift in Sources */,
 				7F2DCF672956637300B72131 /* Transform.swift in Sources */,
+				7F106DA2295CBB2700AAB0E6 /* InputTrackerComponent.swift in Sources */,
 				7F2DCF4129542AC700B72131 /* GameObject.swift in Sources */,
 				7F8910C429347D5600E4C8ED /* Game_Engine.xcdatamodeld in Sources */,
 				7F106D94295C880500AAB0E6 /* SandboxScene.swift in Sources */,
@@ -478,8 +528,10 @@
 				7F2DCF65295653F700B72131 /* Vertex.swift in Sources */,
 				7F106D97295C8EF500AAB0E6 /* QuadGameObject.swift in Sources */,
 				7F106D8B295B924200AAB0E6 /* Matrices.swift in Sources */,
+				7F106D9E295CB58B00AAB0E6 /* Keyboard.swift in Sources */,
 				7F2DCF5A29563CC900B72131 /* MeshCache.swift in Sources */,
 				7F2DCF362954216C00B72131 /* Engine.swift in Sources */,
+				7F106DA4295CBF9400AAB0E6 /* TriGameObject.swift in Sources */,
 				7F2DCF502956329E00B72131 /* RenderPipelineStateCache.swift in Sources */,
 				7F2DCF4E2956320900B72131 /* RenderPipelineDescriptorCache.swift in Sources */,
 				7F2DCF4329542CBC00B72131 /* GameViewRenderer.swift in Sources */,
