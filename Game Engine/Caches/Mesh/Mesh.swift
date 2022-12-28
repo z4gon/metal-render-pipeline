@@ -4,11 +4,12 @@ enum MeshType{
 }
 
 class Mesh {
-    public var vertices: [Vertex]!
+    public var vertices: [Vertex]! = []
+    public var indices: [UInt32]! = []
     
     init(){
-        createVertices()
+        createMesh()
     }
     
-    func createVertices() {}
+    func createMesh() {}
 }

@@ -5,7 +5,7 @@ class TriGameObject : GameObject {
     override init() {
         super.init()
         
-        let meshRenderer = MeshRenderer(mesh: MeshCache.getMesh(.Triangle))
+        let meshRenderer = MeshRenderer(mesh: MeshCache.getMesh(.Quad))
         self.addComponent(component: meshRenderer)
         
         let faceMouseComponent = FaceMouseComponent()
