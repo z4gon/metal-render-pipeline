@@ -7,7 +7,7 @@ class Transform {
     
     public var children: [Transform]! = []
     
-    public func addChildren(transform: Transform){
+    public func addChild(transform: Transform){
         children.append(transform)
     }
     
