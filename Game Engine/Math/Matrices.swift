@@ -83,4 +83,26 @@ extension float4x4 {
         
         self = matrix_multiply(self, result)
     }
+    
+    // https://gamedev.stackexchange.com/questions/120338/what-does-a-perspective-projection-matrix-look-like-in-opengl
+    mutating func projectPerspective(fieldOfViewDegrees: Float, aspectRatio: Float, farClippingDistance: Float, nearClippingDistance: Float) {
+        var result = matrix_identity_float4x4
+        
+        let fov = fieldOfViewDegrees.toRadians
+        
+        let t = tan(fov / 2)
+        
+        let aspect = aspectRatio
+        let far = farClippingDistance
+        let near = nearClippingDistance
+        
+        result.columns = (
+            float4(1 / ( aspect * t), 0, 0, 0),
+            float4(0, 1 / t, 0, 0),
+            float4(0, 0, -((far + near)/(far - near)), -1),
+            float4(0, 0, -((2 * far * near)/(far - near)), 0)
+        )
+        
+        self = matrix_multiply(self, result)
+    }
 }

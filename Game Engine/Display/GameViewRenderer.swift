@@ -3,6 +3,9 @@ import MetalKit
 class GameViewRenderer: NSObject {
     
     public static var ScreenSize = float2(0,0)
+    public static var AspectRatio: Float {
+        return ScreenSize.x / ScreenSize.y
+    }
     
     init(_ mtkView: MTKView) {
         super.init()

@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		7F106D83295A454400AAB0E6 /* Renderable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106D82295A454400AAB0E6 /* Renderable.swift */; };
 		7F106D85295A458000AAB0E6 /* Updatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106D84295A458000AAB0E6 /* Updatable.swift */; };
-		7F106D88295B8DE900AAB0E6 /* MoveComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106D87295B8DE900AAB0E6 /* MoveComponent.swift */; };
+		7F106D88295B8DE900AAB0E6 /* RotateComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106D87295B8DE900AAB0E6 /* RotateComponent.swift */; };
 		7F106D8B295B924200AAB0E6 /* Matrices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106D8A295B924200AAB0E6 /* Matrices.swift */; };
 		7F106D8D295B947500AAB0E6 /* ModelConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106D8C295B947500AAB0E6 /* ModelConstants.swift */; };
 		7F106D90295C876800AAB0E6 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106D8F295C876800AAB0E6 /* Scene.swift */; };
@@ -33,6 +33,9 @@
 		7F106DBE295D099300AAB0E6 /* DebugCameraComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106DBD295D099300AAB0E6 /* DebugCameraComponent.swift */; };
 		7F106DC0295D0F2600AAB0E6 /* EarlyUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106DBF295D0F2600AAB0E6 /* EarlyUpdatable.swift */; };
 		7F106DC2295D0F2B00AAB0E6 /* LateUpdatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106DC1295D0F2B00AAB0E6 /* LateUpdatable.swift */; };
+		7F106DC4295D741600AAB0E6 /* CubeMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106DC3295D741600AAB0E6 /* CubeMesh.swift */; };
+		7F106DC6295D7B1700AAB0E6 /* CubeGameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106DC5295D7B1700AAB0E6 /* CubeGameObject.swift */; };
+		7F106DC8295D807E00AAB0E6 /* DepthStencilStateCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106DC7295D807E00AAB0E6 /* DepthStencilStateCache.swift */; };
 		7F1AA6ED2934924200BD3501 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1AA6EC2934924200BD3501 /* GameView.swift */; };
 		7F1AA6EF2934A38500BD3501 /* MyShaders.metal in Sources */ = {isa = PBXBuildFile; fileRef = 7F1AA6EE2934A38500BD3501 /* MyShaders.metal */; };
 		7F2DCF2E2953C06600B72131 /* Float3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2DCF2D2953C06600B72131 /* Float3.swift */; };
@@ -81,7 +84,7 @@
 /* Begin PBXFileReference section */
 		7F106D82295A454400AAB0E6 /* Renderable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Renderable.swift; sourceTree = "<group>"; };
 		7F106D84295A458000AAB0E6 /* Updatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Updatable.swift; sourceTree = "<group>"; };
-		7F106D87295B8DE900AAB0E6 /* MoveComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveComponent.swift; sourceTree = "<group>"; };
+		7F106D87295B8DE900AAB0E6 /* RotateComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotateComponent.swift; sourceTree = "<group>"; };
 		7F106D8A295B924200AAB0E6 /* Matrices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Matrices.swift; sourceTree = "<group>"; };
 		7F106D8C295B947500AAB0E6 /* ModelConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelConstants.swift; sourceTree = "<group>"; };
 		7F106D8F295C876800AAB0E6 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
@@ -105,6 +108,9 @@
 		7F106DBD295D099300AAB0E6 /* DebugCameraComponent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugCameraComponent.swift; sourceTree = "<group>"; };
 		7F106DBF295D0F2600AAB0E6 /* EarlyUpdatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarlyUpdatable.swift; sourceTree = "<group>"; };
 		7F106DC1295D0F2B00AAB0E6 /* LateUpdatable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LateUpdatable.swift; sourceTree = "<group>"; };
+		7F106DC3295D741600AAB0E6 /* CubeMesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubeMesh.swift; sourceTree = "<group>"; };
+		7F106DC5295D7B1700AAB0E6 /* CubeGameObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CubeGameObject.swift; sourceTree = "<group>"; };
+		7F106DC7295D807E00AAB0E6 /* DepthStencilStateCache.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DepthStencilStateCache.swift; sourceTree = "<group>"; };
 		7F1AA6EC2934924200BD3501 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		7F1AA6EE2934A38500BD3501 /* MyShaders.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = MyShaders.metal; sourceTree = "<group>"; };
 		7F2DCF2D2953C06600B72131 /* Float3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Float3.swift; sourceTree = "<group>"; };
@@ -223,7 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				7F106DBD295D099300AAB0E6 /* DebugCameraComponent.swift */,
-				7F106D87295B8DE900AAB0E6 /* MoveComponent.swift */,
+				7F106D87295B8DE900AAB0E6 /* RotateComponent.swift */,
 				7F106DA5295CC01C00AAB0E6 /* FaceMouseComponent.swift */,
 				7F106DA1295CBB2700AAB0E6 /* InputTrackerComponent.swift */,
 			);
@@ -235,6 +241,7 @@
 			children = (
 				7F106D96295C8EF500AAB0E6 /* QuadGameObject.swift */,
 				7F106DA3295CBF9400AAB0E6 /* TriGameObject.swift */,
+				7F106DC5295D7B1700AAB0E6 /* CubeGameObject.swift */,
 			);
 			path = Prefabs;
 			sourceTree = "<group>";
@@ -263,6 +270,7 @@
 			children = (
 				7F106DB0295CC95C00AAB0E6 /* TriangleMesh.swift */,
 				7F106DB2295CC98000AAB0E6 /* QuadMesh.swift */,
+				7F106DC3295D741600AAB0E6 /* CubeMesh.swift */,
 			);
 			path = Meshes;
 			sourceTree = "<group>";
@@ -334,6 +342,7 @@
 				7F2DCF4B295630FA00B72131 /* VertexDescriptorCache.swift */,
 				7F2DCF4D2956320900B72131 /* RenderPipelineDescriptorCache.swift */,
 				7F2DCF4F2956329E00B72131 /* RenderPipelineStateCache.swift */,
+				7F106DC7295D807E00AAB0E6 /* DepthStencilStateCache.swift */,
 			);
 			path = Caches;
 			sourceTree = "<group>";
@@ -567,10 +576,11 @@
 				7F106DA6295CC01C00AAB0E6 /* FaceMouseComponent.swift in Sources */,
 				7F1AA6EF2934A38500BD3501 /* MyShaders.metal in Sources */,
 				7F2DCF5829563BE000B72131 /* MeshRenderer.swift in Sources */,
+				7F106DC8295D807E00AAB0E6 /* DepthStencilStateCache.swift in Sources */,
 				7F106D85295A458000AAB0E6 /* Updatable.swift in Sources */,
 				7F2DCF5229563A7200B72131 /* Component.swift in Sources */,
 				7F2DCF4C295630FA00B72131 /* VertexDescriptorCache.swift in Sources */,
-				7F106D88295B8DE900AAB0E6 /* MoveComponent.swift in Sources */,
+				7F106D88295B8DE900AAB0E6 /* RotateComponent.swift in Sources */,
 				7F8910BF29347D5600E4C8ED /* AppDelegate.swift in Sources */,
 				7F106D83295A454400AAB0E6 /* Renderable.swift in Sources */,
 				7F2DCF4A2956084C00B72131 /* ShaderCache.swift in Sources */,
@@ -583,6 +593,7 @@
 				7F106D8D295B947500AAB0E6 /* ModelConstants.swift in Sources */,
 				7F106D99295CB4C400AAB0E6 /* GameViewInputExtension.swift in Sources */,
 				7F106DB3295CC98000AAB0E6 /* QuadMesh.swift in Sources */,
+				7F106DC4295D741600AAB0E6 /* CubeMesh.swift in Sources */,
 				7F2DCF5D295652D000B72131 /* Sizeable.swift in Sources */,
 				7F2DCF2E2953C06600B72131 /* Float3.swift in Sources */,
 				7F2DCF672956637300B72131 /* Transform.swift in Sources */,
@@ -602,6 +613,7 @@
 				7F2DCF362954216C00B72131 /* Engine.swift in Sources */,
 				7F106DA4295CBF9400AAB0E6 /* TriGameObject.swift in Sources */,
 				7F106DB5295CCE5D00AAB0E6 /* UInt32.swift in Sources */,
+				7F106DC6295D7B1700AAB0E6 /* CubeGameObject.swift in Sources */,
 				7F2DCF502956329E00B72131 /* RenderPipelineStateCache.swift in Sources */,
 				7F2DCF4E2956320900B72131 /* RenderPipelineDescriptorCache.swift in Sources */,
 				7F106DBA295CF09E00AAB0E6 /* Camera.swift in Sources */,
