@@ -19,15 +19,21 @@ struct ModelConstants {
     float4x4 modelMatrix;
 };
 
+struct SceneConstants {
+    float4x4 viewMatrix;
+};
+
 vertex FragmentData basic_vertex_shader(
   // metal can infer the data because we are describing it using the vertex descriptor
   const VertexData IN [[ stage_in ]],
-  constant ModelConstants &modelConstants [[ buffer(1) ]]
+  constant ModelConstants &modelConstants [[ buffer(1) ]],
+  constant SceneConstants &sceneConstants [[ buffer(2) ]]
 ){
     FragmentData OUT;
     
     // return the vertex position in homogeneous screen space
-    OUT.position = modelConstants.modelMatrix * float4(IN.position, 1);
+    // ProjectionMatrix * ViewMatrix * ModelMatrix * ObjectPosition = HSCPosition
+    OUT.position = sceneConstants.viewMatrix * modelConstants.modelMatrix * float4(IN.position, 1);
     
     OUT.color = IN.color;
     

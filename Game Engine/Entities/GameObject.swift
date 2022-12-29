@@ -9,11 +9,31 @@ class GameObject : Transform {
     }
 }
 
+extension GameObject : EarlyUpdatable {
+    public func doEarlyUpdate(deltaTime: Float){
+        for component in components {
+            if let updatableComponent = component as? EarlyUpdatable {
+                updatableComponent.doEarlyUpdate(deltaTime: deltaTime)
+            }
+        }
+    }
+}
+
 extension GameObject : Updatable {
     public func doUpdate(deltaTime: Float){
         for component in components {
             if let updatableComponent = component as? Updatable {
                 updatableComponent.doUpdate(deltaTime: deltaTime)
+            }
+        }
+    }
+}
+
+extension GameObject : LateUpdatable {
+    public func doLateUpdate(deltaTime: Float){
+        for component in components {
+            if let updatableComponent = component as? LateUpdatable {
+                updatableComponent.doLateUpdate(deltaTime: deltaTime)
             }
         }
     }
