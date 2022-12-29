@@ -1,6 +1,6 @@
 import MetalKit
 
-class MeshRenderer : Component, Renderable {
+class MeshRenderer : Component, Renderable, LateUpdatable {
     
     private var _modelConstants: ModelConstants! = ModelConstants()
     
@@ -32,10 +32,11 @@ class MeshRenderer : Component, Renderable {
         _modelConstants.modelMatrix = modelMatrix
     }
     
-    func doRender(renderCommandEncoder: MTLRenderCommandEncoder) {
-        
+    func doLateUpdate(deltaTime: Float){
         updateModelConstants()
-        
+    }
+    
+    func doRender(renderCommandEncoder: MTLRenderCommandEncoder) {
         // set the transformation matrix
         renderCommandEncoder.setVertexBytes(&_modelConstants, length: ModelConstants.stride, index: 1)
         

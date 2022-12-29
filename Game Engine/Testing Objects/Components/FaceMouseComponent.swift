@@ -5,8 +5,8 @@ class FaceMouseComponent : Component, Updatable {
         
         // calculate rotation needed to face the mouse position
         let rotationZ = -atan2f(
-            Mouse.getMouseViewportPosition().x - gameObject.position.x,
-            Mouse.getMouseViewportPosition().y - gameObject.position.y
+            Mouse.getMouseViewportPosition(CameraManager.mainCamera).x - gameObject.position.x,
+            Mouse.getMouseViewportPosition(CameraManager.mainCamera).y - gameObject.position.y
         )
         
         gameObject.rotation.z = rotationZ

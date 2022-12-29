@@ -87,4 +87,9 @@ class Mouse {
         let y = (_overallMousePosition.y - GameViewRenderer.ScreenSize.y * 0.5) / (GameViewRenderer.ScreenSize.y * 0.5)
         return float2(x, y)
     }
+    
+    public static func getMouseViewportPosition(_ camera: Camera)->float2{
+        let viewportPosition = getMouseViewportPosition()
+        return float2(viewportPosition.x + camera.gameObject.position.x, viewportPosition.y + camera.gameObject.position.y)
+    }
 }

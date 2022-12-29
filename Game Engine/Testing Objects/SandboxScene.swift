@@ -19,9 +19,17 @@ class SandboxScene : Scene {
         }
         
         // track input
-        let trackerGameObject = GameObject()
-        let trackerComponent = InputTrackerComponent()
-        trackerGameObject.addComponent(component: trackerComponent)
-        addChild(transform: trackerGameObject)
+//        let trackerGameObject = GameObject()
+//        let trackerComponent = InputTrackerComponent()
+//        trackerGameObject.addComponent(component: trackerComponent)
+//        addChild(transform: trackerGameObject)
+        
+        // camera
+        let cameraGameObject = GameObject()
+        let cameraComponent = DebugCameraComponent()
+        cameraGameObject.addComponent(component: cameraComponent)
+        addChild(transform: cameraGameObject)
+        
+        CameraManager.mainCamera = cameraComponent
     }
 }
