@@ -9,4 +9,4 @@
 - [Part 7: 3D Affine Transformation Matrices](./part-7/README.md)
 - [Part 8: Scenes](./part-8/README.md)
 - [Part 9: Index Buffers](./part-9/README.md)
-- [Part 10: Camera and View Matrix](./part-9/README.md)
+- [Part 10: Camera and View Matrix](./part-10/README.md)
