@@ -1,6 +1,6 @@
 # Part 4: Vertex Descriptors
 
-[Back to Dev Log](../README.md)
+[Back to Readme](../../README.md)
 
 ## References
 
@@ -21,7 +21,6 @@
 
 - [MTLVertexDescriptor](https://developer.apple.com/documentation/metal/mtlvertexdescriptor)
 - [MTLVertexAttributeDescriptor](https://developer.apple.com/documentation/metal/mtlvertexattributedescriptor)
-
 
 Create a **MTL Vertex Descriptor** and start defining the **attributes**.
 
@@ -85,11 +84,11 @@ vertex FragmentData basic_vertex_shader(
   const VertexData IN [[ stage_in ]]
 ){
     FragmentData OUT;
-    
+
     // return the vertex position in homogeneous screen space
     OUT.position = float4(IN.position, 1);
     OUT.color = IN.color;
-    
+
     return OUT;
 }
 ```

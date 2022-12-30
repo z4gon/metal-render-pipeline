@@ -1,6 +1,6 @@
 # Part 7: 3D Affine Transformation Matrices
 
-[Back to Dev Log](../README.md)
+[Back to Readme](../../README.md)
 
 ## References
 

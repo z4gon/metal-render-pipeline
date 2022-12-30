@@ -1,6 +1,6 @@
 # Part 8: Scenes
 
-[Back to Dev Log](../README.md)
+[Back to Readme](../../README.md)
 
 ## References
 

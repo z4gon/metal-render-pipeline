@@ -1,6 +1,6 @@
 # Part 3: Vertex and Fragment Shaders
 
-[Back to Dev Log](../README.md)
+[Back to Readme](../../README.md)
 
 ## References
 

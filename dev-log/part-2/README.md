@@ -1,6 +1,6 @@
 # Part 2: Draw a simple Triangle in the Screen
 
-[Back to Dev Log](../README.md)
+[Back to Readme](../../README.md)
 
 ## References
 

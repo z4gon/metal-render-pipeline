@@ -1,6 +1,6 @@
 # Part 10: Camera and View Matrix
 
-[Back to Dev Log](../README.md)
+[Back to Readme](../../README.md)
 
 ## References
 

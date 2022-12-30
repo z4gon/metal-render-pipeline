@@ -1,6 +1,6 @@
 # Part 9: Index Buffers
 
-[Back to Dev Log](../README.md)
+[Back to Readme](../../README.md)
 
 ## References
 

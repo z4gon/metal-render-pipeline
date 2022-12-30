@@ -1,6 +1,6 @@
 # Part 1: Setting up the basic Render Pipeline
 
-[Back to Dev Log](../README.md)
+[Back to Readme](../../README.md)
 
 ## References
 

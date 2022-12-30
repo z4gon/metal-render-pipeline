@@ -1,6 +1,6 @@
 # Part 5: Game Object, Libraries and Renderer
 
-[Back to Dev Log](../README.md)
+[Back to Readme](../../README.md)
 
 ## References
 
