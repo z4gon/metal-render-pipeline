@@ -8,3 +8,14 @@ typealias float4 = SIMD4<Float>
 extension SIMD2<Float>: sizeable { }
 extension SIMD3<Float>: sizeable { }
 extension SIMD4<Float>: sizeable { }
+
+extension Float {
+    
+    var toRadians: Float {
+        return (self * 180.0) / Float.pi
+    }
+    
+    var toDegrees: Float {
+        return self * (180.0 / Float.pi)
+    }
+}

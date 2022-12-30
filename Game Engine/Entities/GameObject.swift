@@ -6,6 +6,11 @@ class GameObject : Transform {
     public func addComponent(component: Component){
         components.append(component)
         component.gameObject = self
+        
+        // set the camera as the main camera
+        if let camera  = component as? Camera {
+            CameraManager.mainCamera = camera
+        }
     }
 }
 

@@ -41,6 +41,7 @@ public struct BasicRenderPipelineDescriptor: RenderPipelineDescriptor{
         
         // make the pixel format match the device
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = Preferences.PixelFormat
+        renderPipelineDescriptor.depthAttachmentPixelFormat = Preferences.DepthStencilPixelFormat
         
         renderPipelineDescriptor.vertexFunction = ShaderCache.getVertexFunction(.Basic)
         renderPipelineDescriptor.fragmentFunction = ShaderCache.getFragmentFunction(.Basic)

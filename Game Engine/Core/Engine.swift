@@ -21,6 +21,7 @@ class Engine {
         VertexDescriptorCache.initialize()
         RenderPipelineDescriptorCache.initialize()
         RenderPipelineStateCache.initialize()
+        DepthStencilStateCache.initialize()
         
         SceneManager.initialize(Preferences.InitialScene)
     }

@@ -1,6 +1,6 @@
 import MetalKit
 
-class MoveComponent : Component, Updatable {
+class RotateComponent : Component, Updatable {
     
     var time: Float = 0
     
@@ -9,6 +9,6 @@ class MoveComponent : Component, Updatable {
         
 //        gameObject.position = float3(cos(time), gameObject.position.y, gameObject.position.z)
 //        gameObject.scale = float3(repeating: sin(time))
-        gameObject.rotation = float3(gameObject.rotation.x, gameObject.rotation.y, sin(time))
+        gameObject.rotation = float3(-sin(time), cos(time), sin(time))
     }
 }

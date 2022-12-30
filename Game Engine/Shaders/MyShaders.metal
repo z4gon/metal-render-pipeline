@@ -21,6 +21,7 @@ struct ModelConstants {
 
 struct SceneConstants {
     float4x4 viewMatrix;
+    float4x4 projectionMatrix;
 };
 
 vertex FragmentData basic_vertex_shader(
@@ -33,7 +34,10 @@ vertex FragmentData basic_vertex_shader(
     
     // return the vertex position in homogeneous screen space
     // ProjectionMatrix * ViewMatrix * ModelMatrix * ObjectPosition = HSCPosition
-    OUT.position = sceneConstants.viewMatrix * modelConstants.modelMatrix * float4(IN.position, 1);
+    OUT.position = sceneConstants.projectionMatrix
+                    * sceneConstants.viewMatrix
+                    * modelConstants.modelMatrix
+                    * float4(IN.position, 1);
     
     OUT.color = IN.color;
     

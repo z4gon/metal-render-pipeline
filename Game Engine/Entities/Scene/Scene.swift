@@ -13,6 +13,7 @@ class Scene : Transform {
     
     func updateSceneConstants() {
         _sceneConstants.viewMatrix = CameraManager.mainCamera.viewMatrix
+        _sceneConstants.projectionMatrix = CameraManager.mainCamera.projectionMatrix
     }
     
     override func render(renderCommandEncoder: MTLRenderCommandEncoder) {
