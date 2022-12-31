@@ -6,6 +6,6 @@ class QuadGameObject : GameObject {
         super.init()
         
         self.addComponent(MeshRenderer(mesh: MeshCache.get(.Quad)))
-        self.addComponent(RotateComponent())
+        self.addComponent(MoveComponent())
     }
 }
