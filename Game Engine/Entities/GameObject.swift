@@ -45,10 +45,10 @@ extension GameObject : LateUpdatable {
 }
 
 extension GameObject : Renderable {
-    public func doRender(renderCommandEncoder: MTLRenderCommandEncoder){
+    public func doRender(){
         for component in _components {
             if let renderableComponent = component as? Renderable {
-                renderableComponent.doRender(renderCommandEncoder: renderCommandEncoder)
+                renderableComponent.doRender()
             }
         }
     }

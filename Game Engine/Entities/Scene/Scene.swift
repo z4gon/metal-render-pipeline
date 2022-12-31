@@ -16,13 +16,13 @@ class Scene : Transform {
         _sceneConstants.projectionMatrix = CameraManager.mainCamera.projectionMatrix
     }
     
-    override func render(renderCommandEncoder: MTLRenderCommandEncoder) {
+    override func render() {
         
         updateSceneConstants()
         
         // set the view matrix
-        renderCommandEncoder.setVertexBytes(&_sceneConstants, length: SceneConstants.stride, index: 2)
+        Graphics.renderCommandEncoder.setVertexBytes(&_sceneConstants, length: SceneConstants.stride, index: 2)
         
-        super.render(renderCommandEncoder: renderCommandEncoder)
+        super.render()
     }
 }

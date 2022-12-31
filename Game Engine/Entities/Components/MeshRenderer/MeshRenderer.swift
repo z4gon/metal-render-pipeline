@@ -27,17 +27,17 @@ class MeshRenderer : Component, Renderable, LateUpdatable {
         updateModelConstants()
     }
     
-    func doRender(renderCommandEncoder: MTLRenderCommandEncoder) {
+    func doRender() {
         // set the transformation matrix
-        renderCommandEncoder.setVertexBytes(&_modelConstants, length: ModelConstants.stride, index: 1)
+        Graphics.renderCommandEncoder.setVertexBytes(&_modelConstants, length: ModelConstants.stride, index: 1)
         
-        renderCommandEncoder.setRenderPipelineState(RenderPipelineStateCache.get(.Basic))
-        renderCommandEncoder.setVertexBuffer(_vertexBuffer, offset: 0, index: 0)
+        Graphics.renderCommandEncoder.setRenderPipelineState(RenderPipelineStateCache.get(.Basic))
+        Graphics.renderCommandEncoder.setVertexBuffer(_vertexBuffer, offset: 0, index: 0)
         
-        renderCommandEncoder.setDepthStencilState(DepthStencilStateCache.get(.Less))
+        Graphics.renderCommandEncoder.setDepthStencilState(DepthStencilStateCache.get(.Less))
         
         if(_mesh.indices.count > 0){
-            renderCommandEncoder.drawIndexedPrimitives(
+            Graphics.renderCommandEncoder.drawIndexedPrimitives(
                 type: MTLPrimitiveType.triangle,
                 indexCount: _mesh.indices.count,
                 indexType: MTLIndexType.uint32,
@@ -46,7 +46,7 @@ class MeshRenderer : Component, Renderable, LateUpdatable {
                 instanceCount: 1 // for now, might change in the future
             )
         } else {
-            renderCommandEncoder.drawPrimitives(
+            Graphics.renderCommandEncoder.drawPrimitives(
                 type: MTLPrimitiveType.triangle,
                 vertexStart: 0,
                 vertexCount: _mesh.vertices.count

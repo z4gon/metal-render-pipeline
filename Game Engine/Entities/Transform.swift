@@ -74,13 +74,13 @@ class Transform {
         }
     }
     
-    public func render(renderCommandEncoder: MTLRenderCommandEncoder){
+    public func render(){
         if let renderableSelf = self as? Renderable {
-            renderableSelf.doRender(renderCommandEncoder: renderCommandEncoder)
+            renderableSelf.doRender()
         }
         
         for child in _children {
-            child.render(renderCommandEncoder: renderCommandEncoder)
+            child.render()
         }
     }
 }
