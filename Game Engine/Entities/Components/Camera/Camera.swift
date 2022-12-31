@@ -36,7 +36,7 @@ class Camera : Component, EarlyUpdatable {
         if(type == CameraType.Perspective) {
             result.projectPerspective(
                 fieldOfViewDegrees: fieldOfView,
-                aspectRatio: GameViewRenderer.AspectRatio,
+                aspectRatio: GameViewRenderer.aspectRatio,
                 farClippingDistance: farClippingDistance,
                 nearClippingDistance: nearClippingDistance
             )
@@ -46,7 +46,7 @@ class Camera : Component, EarlyUpdatable {
     }
     
     // to ensure all other components get the accurate camera position
-    func doEarlyUpdate(deltaTime: Float) {
+    func doEarlyUpdate() {
         updateViewMatrix()
         updateProjectionMatrix()
     }

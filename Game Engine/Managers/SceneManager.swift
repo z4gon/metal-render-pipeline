@@ -2,6 +2,7 @@ import MetalKit
 
 enum SceneType {
     case Sandbox
+    case PointingTriangles
 }
 
 class SceneManager {
@@ -16,15 +17,17 @@ class SceneManager {
         switch sceneType {
             case .Sandbox:
                 _currentScene = SandboxScene()
+            case .PointingTriangles:
+                _currentScene = PointingTrianglesScene()
         }
     }
     
-    public static func tickScene(deltaTime: Float, renderCommandEncoder: MTLRenderCommandEncoder) {
+    public static func tickScene() {
         
-        _currentScene.earlyUpdate(deltaTime: deltaTime)
-        _currentScene.update(deltaTime: deltaTime)
-        _currentScene.lateUpdate(deltaTime: deltaTime)
+        _currentScene.earlyUpdate()
+        _currentScene.update()
+        _currentScene.lateUpdate()
         
-        _currentScene.render(renderCommandEncoder: renderCommandEncoder)
+        _currentScene.render()
     }
 }

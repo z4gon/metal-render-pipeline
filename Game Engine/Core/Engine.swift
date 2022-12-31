@@ -6,6 +6,7 @@ class Engine {
     
     public static var device: MTLDevice!
     public static var commandQueue: MTLCommandQueue!
+    public static var defaultLibrary: MTLLibrary!
     
     public static func initialize(device: MTLDevice){
         
@@ -16,8 +17,12 @@ class Engine {
         // create the command queue to handle commands for the GPU
         commandQueue = device.makeCommandQueue()
         
+        // at compile xcode builds the default library with all the vertex and fragment functions
+        defaultLibrary = device.makeDefaultLibrary()
+        
         MeshCache.initialize()
-        ShaderCache.initialize()
+        VertexShaderCache.initialize()
+        FragmentShaderCache.initialize()
         VertexDescriptorCache.initialize()
         RenderPipelineDescriptorCache.initialize()
         RenderPipelineStateCache.initialize()

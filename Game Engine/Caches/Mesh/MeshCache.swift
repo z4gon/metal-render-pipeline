@@ -2,21 +2,17 @@
 
 import MetalKit
 
-class MeshCache {
+class MeshCache : Cache<MeshType, Mesh> {
     
     private static var _meshes: [MeshType: Mesh] = [:]
     
-    public static func initialize(){
-        createDefaultMeshes()
-    }
-    
-    private static func createDefaultMeshes(){
+    override class func fillCache(){
         _meshes.updateValue(TriangleMesh(), forKey: .Triangle)
         _meshes.updateValue(QuadMesh(), forKey: .Quad)
         _meshes.updateValue(CubeMesh(), forKey: .Cube)
     }
     
-    public static func getMesh(_ meshType: MeshType)->Mesh{
+    override class func get(_ meshType: MeshType)->Mesh{
         return _meshes[meshType]!
     }
 }

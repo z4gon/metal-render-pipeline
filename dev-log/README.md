@@ -11,3 +11,4 @@
 - [Part 9: Index Buffers](./part-9/README.md)
 - [Part 10: Camera and View Matrix](./part-10/README.md)
 - [Part 11: 3D Perspective Projection Matrix](./part-11/README.md)
+- [Part 12: Nested Model Matrices](./part-12/README.md)

@@ -6,22 +6,18 @@ enum VertexDescriptorType {
     case Basic
 }
 
-class VertexDescriptorCache {
+class VertexDescriptorCache : Cache<VertexDescriptorType, MTLVertexDescriptor> {
     
     private static var _vertexDescriptors: [VertexDescriptorType: VertexDescriptor] = [:]
     
-    public static func initialize(){
-        createDefaultVertexDescriptors()
-    }
-    
-    private static func createDefaultVertexDescriptors(){
+    override class func fillCache(){
         _vertexDescriptors.updateValue(BasicVertexDescriptor(), forKey: .Basic)
     }
     
-    public static func getDescriptor(_ vertexDescriptorType: VertexDescriptorType)->MTLVertexDescriptor{
+    override class func get(_ vertexDescriptorType: VertexDescriptorType)->MTLVertexDescriptor{
         return _vertexDescriptors[vertexDescriptorType]!.vertexDescriptor
     }
-    
+
 }
 
 protocol VertexDescriptor {

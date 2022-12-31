@@ -6,19 +6,15 @@ enum RenderPipelineStateType {
     case Basic
 }
 
-class RenderPipelineStateCache {
+class RenderPipelineStateCache : Cache<RenderPipelineStateType, MTLRenderPipelineState> {
     
     private static var _renderPipelineStates: [RenderPipelineStateType: RenderPipelineState] = [:]
     
-    public static func initialize(){
-        createDefaultRenderPipelineStates()
-    }
-    
-    private static func createDefaultRenderPipelineStates(){
+    override class func fillCache(){
         _renderPipelineStates.updateValue(BasicRenderPipelineState(), forKey: .Basic)
     }
     
-    public static func getPipelineState(_ renderPipelineStateType: RenderPipelineStateType)->MTLRenderPipelineState{
+    override class func get(_ renderPipelineStateType: RenderPipelineStateType)->MTLRenderPipelineState{
         return (_renderPipelineStates[renderPipelineStateType]?.renderPipelineState)!
     }
 }
