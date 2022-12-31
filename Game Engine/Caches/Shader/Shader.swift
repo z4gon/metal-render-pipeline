@@ -2,26 +2,11 @@
 
 import MetalKit
 
-enum VertexShaderType{
-    case Basic
-}
-
-enum FragmentShaderType {
-    case Basic
-}
-
 public struct Shader {
-    public var name: String!
-    public var functionName: String!
-    
     public var function: MTLFunction!
     
     init(name: String, functionName: String){
-        self.name = name
-        
-        // at compile time it will pick the right functions by matching the function name
-        self.functionName = functionName
-        
+        // at compile xcode builds the default library with all the vertex and fragment functions
         function = ShaderCache.defaultLibrary.makeFunction(name: functionName)
         function?.label = name
     }

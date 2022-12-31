@@ -1,9 +1,3 @@
-enum MeshType{
-    case Triangle
-    case Quad
-    case Cube
-}
-
 class Mesh {
     public var vertices: [Vertex]! = []
     public var indices: [UInt32]! = []
