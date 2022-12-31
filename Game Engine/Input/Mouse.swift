@@ -83,8 +83,8 @@ class Mouse {
     
     //Returns the mouse position in screen-view coordinates [-1, 1]
     public static func getMouseViewportPosition()->float2{
-        let x = (_overallMousePosition.x - GameViewRenderer.ScreenSize.x * 0.5) / (GameViewRenderer.ScreenSize.x * 0.5)
-        let y = (_overallMousePosition.y - GameViewRenderer.ScreenSize.y * 0.5) / (GameViewRenderer.ScreenSize.y * 0.5)
+        let x = (_overallMousePosition.x - GameViewRenderer.screenSize.x * 0.5) / (GameViewRenderer.screenSize.x * 0.5)
+        let y = (_overallMousePosition.y - GameViewRenderer.screenSize.y * 0.5) / (GameViewRenderer.screenSize.y * 0.5)
         return float2(x, y)
     }
     

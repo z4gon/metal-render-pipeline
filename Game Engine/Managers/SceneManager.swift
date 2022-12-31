@@ -22,11 +22,11 @@ class SceneManager {
         }
     }
     
-    public static func tickScene(deltaTime: Float, renderCommandEncoder: MTLRenderCommandEncoder) {
+    public static func tickScene(renderCommandEncoder: MTLRenderCommandEncoder) {
         
-        _currentScene.earlyUpdate(deltaTime: deltaTime)
-        _currentScene.update(deltaTime: deltaTime)
-        _currentScene.lateUpdate(deltaTime: deltaTime)
+        _currentScene.earlyUpdate()
+        _currentScene.update()
+        _currentScene.lateUpdate()
         
         _currentScene.render(renderCommandEncoder: renderCommandEncoder)
     }

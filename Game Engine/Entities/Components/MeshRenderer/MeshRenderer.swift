@@ -23,7 +23,7 @@ class MeshRenderer : Component, Renderable, LateUpdatable {
         _modelConstants.modelMatrix = gameObject.modelMatrix
     }
     
-    func doLateUpdate(deltaTime: Float){
+    func doLateUpdate(){
         updateModelConstants()
     }
     

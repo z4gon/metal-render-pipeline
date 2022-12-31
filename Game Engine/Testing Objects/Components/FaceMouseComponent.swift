@@ -1,7 +1,7 @@
 import MetalKit
 
 class FaceMouseComponent : Component, Updatable {
-    func doUpdate(deltaTime: Float) {
+    func doUpdate() {
         
         // calculate rotation needed to face the mouse position
         let rotationZ = -atan2f(

@@ -2,9 +2,9 @@ import MetalKit
 
 class GameViewRenderer: NSObject {
     
-    public static var ScreenSize = float2(0,0)
-    public static var AspectRatio: Float {
-        return ScreenSize.x / ScreenSize.y
+    public static var screenSize = float2(0,0)
+    public static var aspectRatio: Float {
+        return screenSize.x / screenSize.y
     }
     
     init(_ mtkView: MTKView) {
@@ -17,7 +17,7 @@ class GameViewRenderer: NSObject {
 extension GameViewRenderer: MTKViewDelegate {
     
     public func updateScreenSize(view: MTKView){
-        GameViewRenderer.ScreenSize = float2(Float(view.bounds.width), Float(view.bounds.height))
+        GameViewRenderer.screenSize = float2(Float(view.bounds.width), Float(view.bounds.height))
     }
     
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
@@ -32,7 +32,8 @@ extension GameViewRenderer: MTKViewDelegate {
         
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
         
-        SceneManager.tickScene(deltaTime: 1.0 / Float(view.preferredFramesPerSecond), renderCommandEncoder: renderCommandEncoder!)
+        Time.updateTime(1.0 / Float(view.preferredFramesPerSecond))
+        SceneManager.tickScene(renderCommandEncoder: renderCommandEncoder!)
         
         renderCommandEncoder?.endEncoding()
         commandBuffer?.present(drawable)

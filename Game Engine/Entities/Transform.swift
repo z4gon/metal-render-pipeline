@@ -40,37 +40,37 @@ class Transform {
         }
     }
     
-    public func earlyUpdate(deltaTime: Float){
+    public func earlyUpdate(){
         if let updatableSelf = self as? EarlyUpdatable {
-            updatableSelf.doEarlyUpdate(deltaTime: deltaTime)
+            updatableSelf.doEarlyUpdate()
         }
         
         for child in _children {
-            child.earlyUpdate(deltaTime: deltaTime)
+            child.earlyUpdate()
         }
     }
     
-    public func update(deltaTime: Float){
+    public func update(){
         if let updatableSelf = self as? Updatable {
-            updatableSelf.doUpdate(deltaTime: deltaTime)
+            updatableSelf.doUpdate()
         }
         
         for child in _children {
-            child.update(deltaTime: deltaTime)
+            child.update()
         }
     }
     
     // https://docs.unity3d.com/ScriptReference/MonoBehaviour.LateUpdate.html
     // LateUpdate is called after all Update functions have been called
-    public func lateUpdate(deltaTime: Float){
+    public func lateUpdate(){
         if let updatableSelf = self as? LateUpdatable {
-            updatableSelf.doLateUpdate(deltaTime: deltaTime)
+            updatableSelf.doLateUpdate()
         }
         
         updateModelMatrix()
         
         for child in _children {
-            child.lateUpdate(deltaTime: deltaTime)
+            child.lateUpdate()
         }
     }
     

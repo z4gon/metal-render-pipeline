@@ -15,30 +15,30 @@ class GameObject : Transform {
 }
 
 extension GameObject : EarlyUpdatable {
-    public func doEarlyUpdate(deltaTime: Float){
+    public func doEarlyUpdate(){
         for component in _components {
             if let updatableComponent = component as? EarlyUpdatable {
-                updatableComponent.doEarlyUpdate(deltaTime: deltaTime)
+                updatableComponent.doEarlyUpdate()
             }
         }
     }
 }
 
 extension GameObject : Updatable {
-    public func doUpdate(deltaTime: Float){
+    public func doUpdate(){
         for component in _components {
             if let updatableComponent = component as? Updatable {
-                updatableComponent.doUpdate(deltaTime: deltaTime)
+                updatableComponent.doUpdate()
             }
         }
     }
 }
 
 extension GameObject : LateUpdatable {
-    public func doLateUpdate(deltaTime: Float){
+    public func doLateUpdate(){
         for component in _components {
             if let updatableComponent = component as? LateUpdatable {
-                updatableComponent.doLateUpdate(deltaTime: deltaTime)
+                updatableComponent.doLateUpdate()
             }
         }
     }

@@ -1,3 +1,3 @@
 protocol EarlyUpdatable {
-    func doEarlyUpdate(deltaTime: Float)
+    func doEarlyUpdate()
 }

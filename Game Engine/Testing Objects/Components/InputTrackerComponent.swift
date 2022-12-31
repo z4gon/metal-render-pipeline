@@ -4,7 +4,7 @@ class InputTrackerComponent : Component, Updatable {
     
     var time: Float = 0
     
-    func doUpdate(deltaTime: Float) {
+    func doUpdate() {
         print("getMouseWindowPosition: \(Mouse.getMouseWindowPosition())")
         print("getMouseViewportPosition: \(Mouse.getMouseViewportPosition())")
         
