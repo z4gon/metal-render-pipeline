@@ -40,10 +40,10 @@ class MeshRenderer : Component, Renderable, LateUpdatable {
         // set the transformation matrix
         renderCommandEncoder.setVertexBytes(&_modelConstants, length: ModelConstants.stride, index: 1)
         
-        renderCommandEncoder.setRenderPipelineState(RenderPipelineStateCache.getPipelineState(.Basic))
+        renderCommandEncoder.setRenderPipelineState(RenderPipelineStateCache.get(.Basic))
         renderCommandEncoder.setVertexBuffer(_vertexBuffer, offset: 0, index: 0)
         
-        renderCommandEncoder.setDepthStencilState(DepthStencilStateCache.getDepthStencilState(.Less))
+        renderCommandEncoder.setDepthStencilState(DepthStencilStateCache.get(.Less))
         
         if(_mesh.indices.count > 0){
             renderCommandEncoder.drawIndexedPrimitives(

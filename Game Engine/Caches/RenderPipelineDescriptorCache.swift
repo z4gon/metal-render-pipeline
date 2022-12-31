@@ -46,6 +46,6 @@ public struct BasicRenderPipelineDescriptor: RenderPipelineDescriptor{
         renderPipelineDescriptor.vertexFunction = VertexShaderCache.get(.Basic)
         renderPipelineDescriptor.fragmentFunction = FragmentShaderCache.get(.Basic)
         
-        renderPipelineDescriptor.vertexDescriptor = VertexDescriptorCache.getDescriptor(.Basic)
+        renderPipelineDescriptor.vertexDescriptor = VertexDescriptorCache.get(.Basic)
     }
 }
