@@ -5,14 +5,24 @@ class Transform {
     public var rotation: float3 = float3(repeating: 0);
     public var scale: float3 = float3(repeating: 1);
     
-    public var children: [Transform]! = []
+    private var _children: [Transform]! = []
     
-    public func addChild(transform: Transform){
-        children.append(transform)
+    private var _parent: Transform!
+    public var parent: Transform {
+        return _parent
+    }
+    
+    public func addChild(_ child: Transform){
+        _children.append(child)
+        child.setParent(self)
+    }
+    
+    public func setParent(_ parent: Transform){
+        _parent = parent
     }
     
     public func earlyUpdate(deltaTime: Float){
-        for child in children {
+        for child in _children {
             child.earlyUpdate(deltaTime: deltaTime)
         }
         
@@ -22,7 +32,7 @@ class Transform {
     }
     
     public func update(deltaTime: Float){
-        for child in children {
+        for child in _children {
             child.update(deltaTime: deltaTime)
         }
         
@@ -34,7 +44,7 @@ class Transform {
     // https://docs.unity3d.com/ScriptReference/MonoBehaviour.LateUpdate.html
     // LateUpdate is called after all Update functions have been called
     public func lateUpdate(deltaTime: Float){
-        for child in children {
+        for child in _children {
             child.lateUpdate(deltaTime: deltaTime)
         }
         
@@ -44,7 +54,7 @@ class Transform {
     }
     
     public func render(renderCommandEncoder: MTLRenderCommandEncoder){
-        for child in children {
+        for child in _children {
             child.render(renderCommandEncoder: renderCommandEncoder)
         }
         

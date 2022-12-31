@@ -1,5 +1,12 @@
 import MetalKit
 
 class Component {
-    public var gameObject: GameObject!
+    private var _gameObject: GameObject!
+    public var gameObject: GameObject {
+        return _gameObject
+    }
+    
+    public func setGameObject(_ gameObject: GameObject) {
+        _gameObject = gameObject
+    }
 }
