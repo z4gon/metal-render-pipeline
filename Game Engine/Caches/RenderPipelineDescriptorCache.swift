@@ -43,8 +43,9 @@ public struct BasicRenderPipelineDescriptor: RenderPipelineDescriptor{
         renderPipelineDescriptor.colorAttachments[0].pixelFormat = Preferences.PixelFormat
         renderPipelineDescriptor.depthAttachmentPixelFormat = Preferences.DepthStencilPixelFormat
         
-        renderPipelineDescriptor.vertexFunction = ShaderCache.getVertexFunction(.Basic)
-        renderPipelineDescriptor.fragmentFunction = ShaderCache.getFragmentFunction(.Basic)
+        renderPipelineDescriptor.vertexFunction = VertexShaderCache.get(.Basic)
+        renderPipelineDescriptor.fragmentFunction = FragmentShaderCache.get(.Basic)
+        
         renderPipelineDescriptor.vertexDescriptor = VertexDescriptorCache.getDescriptor(.Basic)
     }
 }

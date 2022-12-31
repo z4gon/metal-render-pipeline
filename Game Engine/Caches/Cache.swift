@@ -1,14 +1,14 @@
 class Cache<EntityType, Entity> {
     
-    func initialize() {
+    class func initialize() {
         fillCache()
     }
     
-    func fillCache() {
+    class func fillCache() {
         // override in sub classes
     }
     
-    func getEntity(_ type: EntityType)->Entity? {
+    class func get(_ type: EntityType)->Entity? {
         return nil // override in sub classes
     }
     
