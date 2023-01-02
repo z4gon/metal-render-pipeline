@@ -1,6 +1,6 @@
 import MetalKit
 
-class SandboxScene : Scene {
+class UVsScene : Scene {
     
     override func buildScene() {
         

@@ -15,6 +15,7 @@ struct FragmentData {
     float4 position [[ position ]];
     float4 color;
     float2 uv;
+    float time;
 };
 
 struct ModelConstants {
@@ -24,4 +25,5 @@ struct ModelConstants {
 struct SceneConstants {
     float4x4 viewMatrix;
     float4x4 projectionMatrix;
+    float time;
 };

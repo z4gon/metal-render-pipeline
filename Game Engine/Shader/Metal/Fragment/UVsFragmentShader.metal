@@ -5,8 +5,13 @@
 #include "../Structs.metal"
 using namespace metal;
 
-fragment half4 texture_sample_fragment_shader(
+fragment half4 uvs_fragment_shader(
     const FragmentData IN [[ stage_in ]]
 ){
-    return half4(IN.uv.x, IN.uv.y, 0, 1);
+    return half4(
+        sin(IN.uv.x + IN.time),
+        sin(IN.uv.y + IN.time),
+        0,
+        1
+    );
 }

@@ -22,6 +22,7 @@ vertex FragmentData basic_vertex_shader(
     
     OUT.color = IN.color;
     OUT.uv = IN.uv;
+    OUT.time = sceneConstants.time;
     
     return OUT;
 }

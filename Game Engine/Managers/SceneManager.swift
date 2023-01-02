@@ -2,6 +2,10 @@ import MetalKit
 
 enum SceneType {
     case Sandbox
+//    case Lighting
+//    case ObjLoading
+//    case TextureSample
+    case UVs
     case CubeAndQuad
     case PointingTriangles
 }
@@ -18,6 +22,8 @@ class SceneManager {
         switch sceneType {
             case .Sandbox:
                 _currentScene = SandboxScene()
+            case .UVs:
+                _currentScene = UVsScene()
             case .CubeAndQuad:
                 _currentScene = CubeAndQuadScene()
             case .PointingTriangles:

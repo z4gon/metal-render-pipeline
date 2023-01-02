@@ -14,6 +14,7 @@ class Scene : Transform {
     func updateSceneConstants() {
         _sceneConstants.viewMatrix = CameraManager.mainCamera.viewMatrix
         _sceneConstants.projectionMatrix = CameraManager.mainCamera.projectionMatrix
+        _sceneConstants.time = Time.time
     }
     
     override func render() {
