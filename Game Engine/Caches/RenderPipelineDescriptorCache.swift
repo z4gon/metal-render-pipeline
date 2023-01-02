@@ -2,50 +2,19 @@
 
 import MetalKit
 
-enum RenderPipelineDescriptorType {
-    case Basic
-}
-
-class RenderPipelineDescriptorCache {
+class RenderPipelineDescriptorCache : Cache<Material, MTLRenderPipelineDescriptor> {
     
-    private static var _renderPipelineDescriptors: [RenderPipelineDescriptorType : RenderPipelineDescriptor] = [:]
+    private static var _renderPipelineDescriptors: [String : RenderPipelineDescriptor] = [:]
     
-    public static func initialize() {
-        createDefaultRenderPipelineDescriptors()
+    override class func get(_ material: Material)->MTLRenderPipelineDescriptor{
+        
+        let key = material.renderPipelineStateId
+        
+        if(!_renderPipelineDescriptors.keys.contains(key)) {
+            _renderPipelineDescriptors.updateValue(RenderPipelineDescriptor(material: material), forKey: key)
+        }
+        
+        return _renderPipelineDescriptors[key]!.renderPipelineDescriptor
     }
     
-    private static func createDefaultRenderPipelineDescriptors() {
-        _renderPipelineDescriptors.updateValue(BasicRenderPipelineDescriptor(), forKey: .Basic)
-    }
-    
-    public static func getDescriptor(_ renderPipelineDescriptorType: RenderPipelineDescriptorType)->MTLRenderPipelineDescriptor{
-        return _renderPipelineDescriptors[renderPipelineDescriptorType]!.renderPipelineDescriptor
-    }
-    
-}
-
-protocol RenderPipelineDescriptor {
-    var name: String { get }
-    var renderPipelineDescriptor: MTLRenderPipelineDescriptor! { get }
-}
-
-public struct BasicRenderPipelineDescriptor: RenderPipelineDescriptor{
-    var name: String = "Basic Render Pipeline Descriptor"
-    
-    var renderPipelineDescriptor: MTLRenderPipelineDescriptor!
-    
-    init(){
-        
-        // create the descriptor for the render pipeline
-        renderPipelineDescriptor = MTLRenderPipelineDescriptor()
-        
-        // make the pixel format match the device
-        renderPipelineDescriptor.colorAttachments[0].pixelFormat = Preferences.PixelFormat
-        renderPipelineDescriptor.depthAttachmentPixelFormat = Preferences.DepthStencilPixelFormat
-        
-        renderPipelineDescriptor.vertexFunction = VertexShaderCache.get(.Basic)
-        renderPipelineDescriptor.fragmentFunction = FragmentShaderCache.get(.Basic)
-        
-        renderPipelineDescriptor.vertexDescriptor = VertexDescriptorCache.get(.Basic)
-    }
 }

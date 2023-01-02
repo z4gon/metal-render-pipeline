@@ -8,8 +8,9 @@ class MeshRenderer : Component, Renderable, LateUpdatable {
     private var _indexBuffer: MTLBuffer!
     
     private var _mesh: Mesh!
+    private var _material: Material!
     
-    init(mesh: Mesh) {
+    init(mesh: Mesh, material: Material) {
         _mesh = mesh
         
         _vertexBuffer = Engine.device.makeBuffer(bytes: _mesh.vertices, length: Vertex.stride * _mesh.vertices.count, options: [])
@@ -17,6 +18,8 @@ class MeshRenderer : Component, Renderable, LateUpdatable {
         if(_mesh.indices.count > 0){
             _indexBuffer = Engine.device.makeBuffer(bytes: _mesh.indices, length: UInt32.stride * _mesh.indices.count, options: [])
         }
+        
+        _material = material
     }
     
     func updateModelConstants() {
@@ -28,11 +31,14 @@ class MeshRenderer : Component, Renderable, LateUpdatable {
     }
     
     func doRender() {
-        // set the transformation matrix
-        Graphics.renderCommandEncoder.setVertexBytes(&_modelConstants, length: ModelConstants.stride, index: 1)
         
-        Graphics.renderCommandEncoder.setRenderPipelineState(RenderPipelineStateCache.get(.Basic))
+        Graphics.renderCommandEncoder.setRenderPipelineState(RenderPipelineStateCache.get(_material))
+        
+        // Vertex Shader data
+        Graphics.renderCommandEncoder.setVertexBytes(&_modelConstants, length: ModelConstants.stride, index: 1) // model matrix
         Graphics.renderCommandEncoder.setVertexBuffer(_vertexBuffer, offset: 0, index: 0)
+        
+        _material.setGpuValues()
         
         Graphics.renderCommandEncoder.setDepthStencilState(DepthStencilStateCache.get(.Less))
         

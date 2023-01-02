@@ -20,7 +20,7 @@ class Scene : Transform {
         
         updateSceneConstants()
         
-        // set the view matrix
+        // set the view matrix and projection matrix
         Graphics.renderCommandEncoder.setVertexBytes(&_sceneConstants, length: SceneConstants.stride, index: 2)
         
         super.render()
