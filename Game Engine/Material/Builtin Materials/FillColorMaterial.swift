@@ -7,7 +7,7 @@ class FillColorMaterial: Material {
     init(_ color: float4) {
         super.init()
         fragmentFunctionName = FragmentFunctionNames.FillColor
-        _color = color
+        setColor(color)
     }
     
     func setColor(_ color: float4) {

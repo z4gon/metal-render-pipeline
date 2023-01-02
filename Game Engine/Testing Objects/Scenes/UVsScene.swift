@@ -1,11 +1,11 @@
 import MetalKit
 
-class SandboxScene : Scene {
+class UVsScene : Scene {
     
     override func buildScene() {
         
         // base quad
-        let quadGameObject = TextureQuadGameObject()
+        let quadGameObject = UVsQuadGameObject()
         addChild(quadGameObject)
         
         // camera

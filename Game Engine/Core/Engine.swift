@@ -21,6 +21,8 @@ class Engine {
         defaultLibrary = device.makeDefaultLibrary()
         
         MeshCache.initialize()
+        TextureCache.initialize()
+        SamplerStateCache.initialize()
         VertexShaderCache.initialize()
         FragmentShaderCache.initialize()
         VertexDescriptorCache.initialize()
