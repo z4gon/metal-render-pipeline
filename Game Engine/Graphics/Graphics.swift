@@ -10,8 +10,4 @@ class Graphics {
     public static func setRenderCommandEncoder(_ renderCommandEncoder: MTLRenderCommandEncoder){
         _renderCommandEncoder = renderCommandEncoder
     }
-    
-    public static func initializeRenderPipelineState(_ material: Material){
-        
-    }
 }

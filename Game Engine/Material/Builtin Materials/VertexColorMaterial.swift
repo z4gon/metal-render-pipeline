@@ -7,4 +7,5 @@ class VertexColorMaterial: Material {
         fragmentFunctionName = FragmentFunctionNames.VertexColor
     }
     
+    // no need to send additional data to the GPU, the vertex color is in the mesh definition
 }

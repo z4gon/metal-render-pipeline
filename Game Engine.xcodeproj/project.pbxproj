@@ -237,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				7F106D8F295C876800AAB0E6 /* Scene.swift */,
+				7F106DBB295CF0B800AAB0E6 /* SceneConstants.swift */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -286,31 +287,20 @@
 		7F106DA9295CC8F600AAB0E6 /* Shader */ = {
 			isa = PBXGroup;
 			children = (
-				7F106DEF29633C4200AAB0E6 /* Function Names */,
 				7F2DCF492956084C00B72131 /* VertexShaderCache.swift */,
 				7F106DD62960D9FF00AAB0E6 /* FragmentShaderChache.swift */,
 			);
 			path = Shader;
 			sourceTree = "<group>";
 		};
-		7F106DAC295CC92000AAB0E6 /* Mesh */ = {
-			isa = PBXGroup;
-			children = (
-				7F106DC92960D03C00AAB0E6 /* MeshType.swift */,
-				7F2DCF5929563CC900B72131 /* MeshCache.swift */,
-				7F106DAF295CC94D00AAB0E6 /* Meshes */,
-			);
-			path = Mesh;
-			sourceTree = "<group>";
-		};
-		7F106DAF295CC94D00AAB0E6 /* Meshes */ = {
+		7F106DAF295CC94D00AAB0E6 /* Builtin Meshes */ = {
 			isa = PBXGroup;
 			children = (
 				7F106DB0295CC95C00AAB0E6 /* TriangleMesh.swift */,
 				7F106DB2295CC98000AAB0E6 /* QuadMesh.swift */,
 				7F106DC3295D741600AAB0E6 /* CubeMesh.swift */,
 			);
-			path = Meshes;
+			path = "Builtin Meshes";
 			sourceTree = "<group>";
 		};
 		7F106DB8295CF09800AAB0E6 /* Camera */ = {
@@ -335,38 +325,18 @@
 			children = (
 				7F106DE22960EA4E00AAB0E6 /* Graphics.swift */,
 				7F106E0229636B4B00AAB0E6 /* Colors.swift */,
-				7F106DE6296337C500AAB0E6 /* Model */,
 				7F106DE7296337D300AAB0E6 /* Rendering */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
 		};
-		7F106DE6296337C500AAB0E6 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				7F2DCF64295653F700B72131 /* Vertex.swift */,
-				7F2DCF5529563BCB00B72131 /* Mesh.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		7F106DE7296337D300AAB0E6 /* Rendering */ = {
 			isa = PBXGroup;
 			children = (
-				7F106DF229633DDF00AAB0E6 /* Material */,
-				7F106D8C295B947500AAB0E6 /* ModelConstants.swift */,
-				7F106DBB295CF0B800AAB0E6 /* SceneConstants.swift */,
+				7F106DEB29633A7000AAB0E6 /* RenderPipelineDescriptor.swift */,
+				7F106DFF2963601100AAB0E6 /* RenderPipelineState.swift */,
 			);
 			path = Rendering;
-			sourceTree = "<group>";
-		};
-		7F106DEA29633A4700AAB0E6 /* RenderPipelineDescriptor */ = {
-			isa = PBXGroup;
-			children = (
-				7F106DEB29633A7000AAB0E6 /* RenderPipelineDescriptor.swift */,
-				7F2DCF4D2956320900B72131 /* RenderPipelineDescriptorCache.swift */,
-			);
-			path = RenderPipelineDescriptor;
 			sourceTree = "<group>";
 		};
 		7F106DEF29633C4200AAB0E6 /* Function Names */ = {
@@ -378,23 +348,13 @@
 			path = "Function Names";
 			sourceTree = "<group>";
 		};
-		7F106DF229633DDF00AAB0E6 /* Material */ = {
-			isa = PBXGroup;
-			children = (
-				7F106DAA295CC90000AAB0E6 /* Shader.swift */,
-				7F106DE8296337F700AAB0E6 /* Material.swift */,
-				7F106DF329633DF600AAB0E6 /* Materials */,
-			);
-			path = Material;
-			sourceTree = "<group>";
-		};
-		7F106DF329633DF600AAB0E6 /* Materials */ = {
+		7F106DF329633DF600AAB0E6 /* Builtin Materials */ = {
 			isa = PBXGroup;
 			children = (
 				7F106DF429633E0E00AAB0E6 /* VertexColorMaterial.swift */,
 				7F106DF629635C6800AAB0E6 /* FillColorMaterial.swift */,
 			);
-			path = Materials;
+			path = "Builtin Materials";
 			sourceTree = "<group>";
 		};
 		7F106DF829635D8500AAB0E6 /* Vertex */ = {
@@ -414,13 +374,24 @@
 			path = Fragment;
 			sourceTree = "<group>";
 		};
-		7F106DFE2963600100AAB0E6 /* RenderPipelineState */ = {
+		7F106E0429636ECC00AAB0E6 /* Material */ = {
 			isa = PBXGroup;
 			children = (
-				7F106DFF2963601100AAB0E6 /* RenderPipelineState.swift */,
-				7F2DCF4F2956329E00B72131 /* RenderPipelineStateCache.swift */,
+				7F106DE8296337F700AAB0E6 /* Material.swift */,
+				7F106DF329633DF600AAB0E6 /* Builtin Materials */,
 			);
-			path = RenderPipelineState;
+			path = Material;
+			sourceTree = "<group>";
+		};
+		7F106E0629636F1C00AAB0E6 /* Mesh */ = {
+			isa = PBXGroup;
+			children = (
+				7F2DCF64295653F700B72131 /* Vertex.swift */,
+				7F2DCF5529563BCB00B72131 /* Mesh.swift */,
+				7F106DC92960D03C00AAB0E6 /* MeshType.swift */,
+				7F106DAF295CC94D00AAB0E6 /* Builtin Meshes */,
+			);
+			path = Mesh;
 			sourceTree = "<group>";
 		};
 		7F1AA6EB29348BDA00BD3501 /* Other Files */ = {
@@ -446,14 +417,16 @@
 			path = Core;
 			sourceTree = "<group>";
 		};
-		7F2DCF312953D58200B72131 /* Shaders */ = {
+		7F2DCF312953D58200B72131 /* Shader */ = {
 			isa = PBXGroup;
 			children = (
+				7F106DAA295CC90000AAB0E6 /* Shader.swift */,
+				7F106DEF29633C4200AAB0E6 /* Function Names */,
 				7F106DF829635D8500AAB0E6 /* Vertex */,
 				7F106DF929635D8B00AAB0E6 /* Fragment */,
 				7F106DD12960D26300AAB0E6 /* Structs.metal */,
 			);
-			path = Shaders;
+			path = Shader;
 			sourceTree = "<group>";
 		};
 		7F2DCF322953D59300B72131 /* Display */ = {
@@ -471,6 +444,7 @@
 			children = (
 				7F2DCF662956637300B72131 /* Transform.swift */,
 				7F2DCF4029542AC700B72131 /* GameObject.swift */,
+				7F106D8C295B947500AAB0E6 /* ModelConstants.swift */,
 				7F106D81295A453100AAB0E6 /* Protocols */,
 				7F2DCF5329563BAE00B72131 /* Components */,
 				7F106D8E295C874D00AAB0E6 /* Scene */,
@@ -482,11 +456,11 @@
 			isa = PBXGroup;
 			children = (
 				7F106DCF2960D0FD00AAB0E6 /* Cache.swift */,
-				7F106DAC295CC92000AAB0E6 /* Mesh */,
+				7F2DCF5929563CC900B72131 /* MeshCache.swift */,
 				7F106DA9295CC8F600AAB0E6 /* Shader */,
 				7F2DCF4B295630FA00B72131 /* VertexDescriptorCache.swift */,
-				7F106DEA29633A4700AAB0E6 /* RenderPipelineDescriptor */,
-				7F106DFE2963600100AAB0E6 /* RenderPipelineState */,
+				7F2DCF4D2956320900B72131 /* RenderPipelineDescriptorCache.swift */,
+				7F2DCF4F2956329E00B72131 /* RenderPipelineStateCache.swift */,
 				7F106DC7295D807E00AAB0E6 /* DepthStencilStateCache.swift */,
 			);
 			path = Caches;
@@ -558,7 +532,9 @@
 				7F106DE52963379100AAB0E6 /* Graphics */,
 				7F106D95295C896600AAB0E6 /* Managers */,
 				7F2DCF482956083D00B72131 /* Caches */,
-				7F2DCF312953D58200B72131 /* Shaders */,
+				7F106E0429636ECC00AAB0E6 /* Material */,
+				7F2DCF312953D58200B72131 /* Shader */,
+				7F106E0629636F1C00AAB0E6 /* Mesh */,
 				7F106D9A295CB4E300AAB0E6 /* Input */,
 				7F2DCF322953D59300B72131 /* Display */,
 				7F1AA6EB29348BDA00BD3501 /* Other Files */,

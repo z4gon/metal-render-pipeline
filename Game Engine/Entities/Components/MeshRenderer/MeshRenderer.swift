@@ -20,7 +20,6 @@ class MeshRenderer : Component, Renderable, LateUpdatable {
         }
         
         _material = material
-        Graphics.initializeRenderPipelineState(material)
     }
     
     func updateModelConstants() {
