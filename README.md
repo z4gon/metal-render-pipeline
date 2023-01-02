@@ -18,3 +18,4 @@ Based on the [tutorial by Rick Twohy](https://github.com/twohyjr/Metal-Game-Engi
 - [Part 10: Camera and View Matrix](./dev-log/part-10/README.md)
 - [Part 11: 3D Perspective Projection Matrix](./dev-log/part-11/README.md)
 - [Part 12: Nested Model Matrices](./dev-log/part-12/README.md)
+- [Part 13: Materials, Multiple Render Pipeline Descriptors and States](./dev-log/part-13/README.md)
