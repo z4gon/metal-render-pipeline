@@ -1,4 +1,4 @@
-# Part 13: UVs and Textures
+# Part 13: UVs, Loading and Sampling Textures
 
 [Back to Readme](../../README.md)
 
