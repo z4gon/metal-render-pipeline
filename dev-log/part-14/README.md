@@ -9,7 +9,7 @@
 
 ## Table of Content
 
-- [Vertex)(#vertex)
+- [Vertex](#vertex)
 - [Mesh](#mesh)
 - [Basic UVs Shader](#basic-uvs-shader)
 - [Texture](#texture)
