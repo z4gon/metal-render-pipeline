@@ -21,6 +21,7 @@ vertex FragmentData basic_vertex_shader(
                     * float4(IN.position, 1);
     
     OUT.color = IN.color;
+    OUT.uv = IN.uv;
     
     return OUT;
 }

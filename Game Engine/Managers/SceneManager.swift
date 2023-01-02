@@ -2,6 +2,7 @@ import MetalKit
 
 enum SceneType {
     case Sandbox
+    case CubeAndQuad
     case PointingTriangles
 }
 
@@ -17,6 +18,8 @@ class SceneManager {
         switch sceneType {
             case .Sandbox:
                 _currentScene = SandboxScene()
+            case .CubeAndQuad:
+                _currentScene = CubeAndQuadScene()
             case .PointingTriangles:
                 _currentScene = PointingTrianglesScene()
         }

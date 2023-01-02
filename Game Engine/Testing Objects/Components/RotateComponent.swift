@@ -9,3 +9,10 @@ class RotateComponent : Component, Updatable {
         gameObject.rotation = float3(-sin(Time.time), cos(Time.time), sin(Time.time))
     }
 }
+
+class RotateYComponent : Component, Updatable {
+    
+    func doUpdate() {
+        gameObject.rotation = float3(gameObject.rotation.x, cos(Time.time), gameObject.rotation.z)
+    }
+}

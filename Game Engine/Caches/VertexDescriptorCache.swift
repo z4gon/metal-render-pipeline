@@ -49,6 +49,11 @@ public struct BasicVertexDescriptor : VertexDescriptor{
         vertexDescriptor.attributes[1].bufferIndex = 0
         vertexDescriptor.attributes[1].offset = float3.size
         
+        // uv
+        vertexDescriptor.attributes[2].format = MTLVertexFormat.float2
+        vertexDescriptor.attributes[2].bufferIndex = 0
+        vertexDescriptor.attributes[2].offset = float3.size + float4.size
+        
         // layout, how the pipeline state describes the struct
         // https://swiftunboxed.com/internals/size-stride-alignment/
         vertexDescriptor.layouts[0].stride = Vertex.stride
