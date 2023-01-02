@@ -16,7 +16,7 @@
 
 ---
 
-## Result
+## Material
 
 The **materials** will have references to the names of the **functions** used for the **Vertex Shader** and **Fragment Shader** stages.
 
