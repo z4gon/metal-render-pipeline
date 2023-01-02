@@ -2,15 +2,16 @@
 
 import MetalKit
 
-class VertexShaderCache : Cache<VertexShaderType, MTLFunction> {
+class VertexShaderCache : Cache<String, MTLFunction> {
     
-    private static var _shaders: [VertexShaderType: Shader] = [:]
+    private static var _shaders: [String: Shader] = [:]
     
-    override class func fillCache(){
-        _shaders.updateValue(Shader(name: "Basic Vertex Shader", functionName: "basic_vertex_shader"), forKey: .Basic)
-    }
-    
-    override class func get(_ vertexShaderType: VertexShaderType)->MTLFunction{
-        return _shaders[vertexShaderType]!.function
+    override class func get(_ vertexFunctionName: String)->MTLFunction{
+        
+        if(!_shaders.keys.contains(vertexFunctionName)) {
+            _shaders.updateValue(Shader(functionName: vertexFunctionName), forKey: vertexFunctionName)
+        }
+        
+        return _shaders[vertexFunctionName]!.function
     }
 }

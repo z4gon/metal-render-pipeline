@@ -5,8 +5,7 @@ import MetalKit
 public struct Shader {
     public var function: MTLFunction!
     
-    init(name: String, functionName: String){
+    init(functionName: String){
         function = Engine.defaultLibrary.makeFunction(name: functionName)
-        function?.label = name
     }
 }
