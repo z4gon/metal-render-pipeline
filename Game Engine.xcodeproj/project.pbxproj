@@ -53,9 +53,10 @@
 		7F106DFB29635DA600AAB0E6 /* VertexColorFragmentShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 7F106DFA29635DA600AAB0E6 /* VertexColorFragmentShader.metal */; };
 		7F106DFD29635E3500AAB0E6 /* FillColorFragmentShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 7F106DFC29635E3500AAB0E6 /* FillColorFragmentShader.metal */; };
 		7F106E002963601100AAB0E6 /* RenderPipelineState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106DFF2963601100AAB0E6 /* RenderPipelineState.swift */; };
+		7F106E0329636B4B00AAB0E6 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106E0229636B4B00AAB0E6 /* Colors.swift */; };
 		7F1AA6ED2934924200BD3501 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1AA6EC2934924200BD3501 /* GameView.swift */; };
 		7F1AA6EF2934A38500BD3501 /* BasicVertexShader.metal in Sources */ = {isa = PBXBuildFile; fileRef = 7F1AA6EE2934A38500BD3501 /* BasicVertexShader.metal */; };
-		7F2DCF2E2953C06600B72131 /* Float3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2DCF2D2953C06600B72131 /* Float3.swift */; };
+		7F2DCF2E2953C06600B72131 /* Float.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2DCF2D2953C06600B72131 /* Float.swift */; };
 		7F2DCF34295420E800B72131 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2DCF33295420E800B72131 /* Preferences.swift */; };
 		7F2DCF362954216C00B72131 /* Engine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2DCF352954216C00B72131 /* Engine.swift */; };
 		7F2DCF4129542AC700B72131 /* GameObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F2DCF4029542AC700B72131 /* GameObject.swift */; };
@@ -145,9 +146,10 @@
 		7F106DFA29635DA600AAB0E6 /* VertexColorFragmentShader.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = VertexColorFragmentShader.metal; sourceTree = "<group>"; };
 		7F106DFC29635E3500AAB0E6 /* FillColorFragmentShader.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = FillColorFragmentShader.metal; sourceTree = "<group>"; };
 		7F106DFF2963601100AAB0E6 /* RenderPipelineState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RenderPipelineState.swift; sourceTree = "<group>"; };
+		7F106E0229636B4B00AAB0E6 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		7F1AA6EC2934924200BD3501 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		7F1AA6EE2934A38500BD3501 /* BasicVertexShader.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = BasicVertexShader.metal; sourceTree = "<group>"; };
-		7F2DCF2D2953C06600B72131 /* Float3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Float3.swift; sourceTree = "<group>"; };
+		7F2DCF2D2953C06600B72131 /* Float.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Float.swift; sourceTree = "<group>"; };
 		7F2DCF33295420E800B72131 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		7F2DCF352954216C00B72131 /* Engine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Engine.swift; sourceTree = "<group>"; };
 		7F2DCF4029542AC700B72131 /* GameObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameObject.swift; sourceTree = "<group>"; };
@@ -332,6 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				7F106DE22960EA4E00AAB0E6 /* Graphics.swift */,
+				7F106E0229636B4B00AAB0E6 /* Colors.swift */,
 				7F106DE6296337C500AAB0E6 /* Model */,
 				7F106DE7296337D300AAB0E6 /* Rendering */,
 			);
@@ -510,7 +513,7 @@
 		7F2DCF5B295652C200B72131 /* Types */ = {
 			isa = PBXGroup;
 			children = (
-				7F2DCF2D2953C06600B72131 /* Float3.swift */,
+				7F2DCF2D2953C06600B72131 /* Float.swift */,
 				7F106DB4295CCE5D00AAB0E6 /* UInt32.swift */,
 				7F2DCF5C295652D000B72131 /* Sizeable.swift */,
 			);
@@ -743,10 +746,11 @@
 				7F106DFD29635E3500AAB0E6 /* FillColorFragmentShader.metal in Sources */,
 				7F106DC4295D741600AAB0E6 /* CubeMesh.swift in Sources */,
 				7F2DCF5D295652D000B72131 /* Sizeable.swift in Sources */,
-				7F2DCF2E2953C06600B72131 /* Float3.swift in Sources */,
+				7F2DCF2E2953C06600B72131 /* Float.swift in Sources */,
 				7F106DDF2960E28000AAB0E6 /* MoveComponent.swift in Sources */,
 				7F2DCF672956637300B72131 /* Transform.swift in Sources */,
 				7F106DA2295CBB2700AAB0E6 /* InputTrackerComponent.swift in Sources */,
+				7F106E0329636B4B00AAB0E6 /* Colors.swift in Sources */,
 				7F106DF529633E0E00AAB0E6 /* VertexColorMaterial.swift in Sources */,
 				7F106DBC295CF0B800AAB0E6 /* SceneConstants.swift in Sources */,
 				7F106DB7295CF05700AAB0E6 /* CameraManager.swift in Sources */,

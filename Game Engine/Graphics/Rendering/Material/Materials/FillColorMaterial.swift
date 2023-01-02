@@ -4,9 +4,10 @@ class FillColorMaterial: Material {
     
     private var _color: float4 = float4(repeating: 0)
     
-    override init() {
+    init(_ color: float4) {
         super.init()
         fragmentFunctionName = FragmentFunctionNames.FillColor
+        _color = color
     }
     
     func setColor(_ color: float4) {
@@ -14,6 +15,6 @@ class FillColorMaterial: Material {
     }
     
     override func setGpuValues() {
-        
+        Graphics.renderCommandEncoder.setFragmentBytes(&_color, length: float4.stride, index: 1)
     }
 }

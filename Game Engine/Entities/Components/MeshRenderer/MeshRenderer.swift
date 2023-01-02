@@ -35,8 +35,8 @@ class MeshRenderer : Component, Renderable, LateUpdatable {
         
         Graphics.renderCommandEncoder.setRenderPipelineState(RenderPipelineStateCache.get(_material))
         
-        // set the model transformation matrix
-        Graphics.renderCommandEncoder.setVertexBytes(&_modelConstants, length: ModelConstants.stride, index: 1)
+        // Vertex Shader data
+        Graphics.renderCommandEncoder.setVertexBytes(&_modelConstants, length: ModelConstants.stride, index: 1) // model matrix
         Graphics.renderCommandEncoder.setVertexBuffer(_vertexBuffer, offset: 0, index: 0)
         
         _material.setGpuValues()
