@@ -161,6 +161,6 @@ override func setGpuValues() {
 
 ## Result
 
-Now the cube moves along the parent quad.
+Now the quad is using a different fragment function than the cube, because the render command encoder is using different render pipeline states.
 
 ![Picture](./1.jpg)
