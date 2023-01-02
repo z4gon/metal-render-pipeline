@@ -5,7 +5,7 @@ class SandboxScene : Scene {
     override func buildScene() {
         
         // base quad
-        let quadGameObject = UVsQuadGameObject()
+        let quadGameObject = TextureQuadGameObject()
         addChild(quadGameObject)
         
         // camera

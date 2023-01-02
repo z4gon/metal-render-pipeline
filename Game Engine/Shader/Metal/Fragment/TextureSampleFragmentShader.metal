@@ -6,12 +6,12 @@
 using namespace metal;
 
 fragment half4 texture_sample_fragment_shader(
-    const FragmentData IN [[ stage_in ]]
+    const FragmentData IN [[ stage_in ]],
+                                              
+    // sampler and texture2d coming in their corresponding memory blocks
+    sampler sampler2d [[ sampler(0) ]],
+    texture2d<float> texture [[ texture(0) ]]
 ){
-    return half4(
-        sin(IN.uv.x + IN.time),
-        sin(IN.uv.y + IN.time),
-        0,
-        1
-    );
+    float4 color = texture.sample(sampler2d, IN.uv);
+    return half4(color.r, color.g, color.b, color.a);
 }
