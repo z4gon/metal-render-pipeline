@@ -20,3 +20,4 @@ Based on the [tutorial by Rick Twohy](https://github.com/twohyjr/Metal-Game-Engi
 - [Part 12: Nested Model Matrices](./dev-log/part-12/README.md)
 - [Part 13: Materials, Multiple Render Pipeline Descriptors and States](./dev-log/part-13/README.md)
 - [Part 14: UVs, Loading and Sampling Textures](./dev-log/part-14/README.md)
+- [Part 15: Loading and Rendering .OBJ Models](./dev-log/part-15/README.md)

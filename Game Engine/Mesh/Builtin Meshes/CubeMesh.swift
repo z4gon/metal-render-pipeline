@@ -1,6 +1,6 @@
 // https://github.com/twohyjr/Metal-Game-Engine-Tutorial/blob/Episode8.0_Meshes_PlayerObject/Episode8.0_Meshes%26PlayerObject/Game%20Engine/Libraries/MeshLibrary.swift
 
-class CubeMesh : Mesh{
+class CubeMesh : BuiltInMesh{
     override func createMesh() {
         vertices = [
             Vertex(position: float3( 0.5, 0.5, 0.5), color: float4(1,0,0,1)), // FRONT Top Right

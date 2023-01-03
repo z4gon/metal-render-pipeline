@@ -41,18 +41,23 @@ public struct BasicVertexDescriptor : VertexDescriptor{
         vertexDescriptor.attributes[0].bufferIndex = 0
         vertexDescriptor.attributes[0].offset = 0
         
-        // color
-        // - second attribute, metal will use the attributes tags like so [[ attribute(1) ]]
-        // - buffer index means the vertices are in the [[ buffer(0) ]] in metal
-        // - offset inside the struct, needs to be the amount of memory of the position, in bytes
+        // normal
         vertexDescriptor.attributes[1].format = MTLVertexFormat.float4
         vertexDescriptor.attributes[1].bufferIndex = 0
         vertexDescriptor.attributes[1].offset = float3.size
         
-        // uv
-        vertexDescriptor.attributes[2].format = MTLVertexFormat.float2
+        // color
+        // - second attribute, metal will use the attributes tags like so [[ attribute(1) ]]
+        // - buffer index means the vertices are in the [[ buffer(0) ]] in metal
+        // - offset inside the struct, needs to be the amount of memory of the position, in bytes
+        vertexDescriptor.attributes[2].format = MTLVertexFormat.float4
         vertexDescriptor.attributes[2].bufferIndex = 0
         vertexDescriptor.attributes[2].offset = float3.size + float4.size
+        
+        // texture coordinate
+        vertexDescriptor.attributes[3].format = MTLVertexFormat.float2
+        vertexDescriptor.attributes[3].bufferIndex = 0
+        vertexDescriptor.attributes[3].offset = float3.size + float4.size + float4.size
         
         // layout, how the pipeline state describes the struct
         // https://swiftunboxed.com/internals/size-stride-alignment/

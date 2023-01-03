@@ -4,9 +4,13 @@ class SandboxScene : Scene {
     
     override func buildScene() {
         
-        // base quad
-        let quadGameObject = TextureQuadGameObject()
-        addChild(quadGameObject)
+        // samus
+        let samusGameObject = ModelGameObject(
+            modelMeshReference: ModelMeshReference("samus"),
+            textureReference: TextureReference("samus", fileExtension: "png", textureLoaderOrigin: MTKTextureLoader.Origin.bottomLeft)
+        )
+        samusGameObject.position.y = -0.5
+        addChild(samusGameObject)
         
         // camera
         let cameraGameObject = GameObject()

@@ -4,8 +4,8 @@ enum SceneType {
     case Sandbox
 //    case Lighting
 //    case ObjLoading
-//    case TextureSample
-    case UVs
+    case MonaLisa
+    case UVsGradient
     case CubeAndQuad
     case PointingTriangles
 }
@@ -20,14 +20,16 @@ class SceneManager {
     
     public static func setScene(_ sceneType: SceneType){
         switch sceneType {
-            case .Sandbox:
-                _currentScene = SandboxScene()
-            case .UVs:
-                _currentScene = UVsScene()
-            case .CubeAndQuad:
-                _currentScene = CubeAndQuadScene()
-            case .PointingTriangles:
-                _currentScene = PointingTrianglesScene()
+        case .Sandbox:
+            _currentScene = SandboxScene()
+        case .MonaLisa:
+            _currentScene = MonaLisaScene()
+        case .UVsGradient:
+            _currentScene = UVsGradientScene()
+        case .CubeAndQuad:
+            _currentScene = CubeAndQuadScene()
+        case .PointingTriangles:
+            _currentScene = PointingTrianglesScene()
         }
     }
     
