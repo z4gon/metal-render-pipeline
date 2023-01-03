@@ -20,14 +20,8 @@ class Engine {
         // at compile xcode builds the default library with all the vertex and fragment functions
         defaultLibrary = device.makeDefaultLibrary()
         
-        MeshCache.initialize()
-        TextureCache.initialize()
         SamplerStateCache.initialize()
-        VertexShaderCache.initialize()
-        FragmentShaderCache.initialize()
         VertexDescriptorCache.initialize()
-        RenderPipelineDescriptorCache.initialize()
-        RenderPipelineStateCache.initialize()
         DepthStencilStateCache.initialize()
         
         SceneManager.initialize(Preferences.InitialScene)
