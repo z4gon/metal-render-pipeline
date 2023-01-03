@@ -5,7 +5,7 @@ class CubeGameObject : GameObject {
     override init() {
         super.init()
         
-        self.addComponent(MeshRenderer(mesh: MeshCache.get(.Cube), material: VertexColorMaterial()))
+        self.addComponent(MeshRenderer(meshReference: BuiltInMeshReference(.Cube), material: VertexColorMaterial()))
         self.addComponent(RotateComponent())
     }
 }

@@ -1,14 +1,13 @@
 import MetalKit
 
-class UVsQuadGameObject : GameObject {
+class UVsGradientQuadGameObject : GameObject {
     
     override init() {
         super.init()
         
-        let mesh = MeshCache.get(.Quad)
         let material = UVsMaterial()
         
-        self.addComponent(MeshRenderer(mesh: mesh, material: material))
+        self.addComponent(MeshRenderer(meshReference: BuiltInMeshReference(.Quad), material: material))
         self.addComponent(RotateYComponent())
     }
 }

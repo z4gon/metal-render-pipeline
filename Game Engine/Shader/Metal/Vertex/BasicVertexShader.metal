@@ -20,8 +20,9 @@ vertex FragmentData basic_vertex_shader(
                     * modelConstants.modelMatrix
                     * float4(IN.position, 1);
     
+    OUT.normal = IN.normal;
     OUT.color = IN.color;
-    OUT.uv = IN.uv;
+    OUT.uv = IN.textureCoordinate;
     OUT.time = sceneConstants.time;
     
     return OUT;

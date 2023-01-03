@@ -5,7 +5,7 @@ class CubeAndQuadScene : Scene {
     override func buildScene() {
         
         // base quad
-        let quadGameObject = QuadGameObject()
+        let quadGameObject = ColorQuadGameObject()
 //        quadGameObject.scale = float3(repeating: 1.5)
         quadGameObject.position.y = -0.5
         quadGameObject.rotation.x = 90

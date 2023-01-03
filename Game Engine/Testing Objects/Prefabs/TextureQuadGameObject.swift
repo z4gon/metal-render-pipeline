@@ -2,13 +2,12 @@ import MetalKit
 
 class TextureQuadGameObject : GameObject {
     
-    override init() {
+    init(_ textureReference: TextureReference) {
         super.init()
         
-        let mesh = MeshCache.get(.Quad)
-        let material = TextureSampleMaterial(TextureDefinition("mona-lisa"))
+        let material = TextureSampleMaterial(textureReference)
         
-        self.addComponent(MeshRenderer(mesh: mesh, material: material))
+        self.addComponent(MeshRenderer(meshReference: BuiltInMeshReference(.Quad), material: material))
         self.addComponent(RotateYComponent())
     }
 }

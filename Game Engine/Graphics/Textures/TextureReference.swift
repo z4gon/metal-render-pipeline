@@ -1,6 +1,6 @@
 import MetalKit
 
-class TextureDefinition {
+class TextureReference {
     public var name: String!
     public var fileExtension: String! = "jpg"
     public var textureLoaderOrigin: MTKTextureLoader.Origin! = MTKTextureLoader.Origin.topLeft
@@ -19,7 +19,7 @@ class TextureDefinition {
         self.textureLoaderOrigin = textureLoaderOrigin
     }
     
-    func createTexture()->Texture {
-        return Texture(self)
+    func load()->MTLTexture {
+        return TextureLoader(self).load()
     }
 }

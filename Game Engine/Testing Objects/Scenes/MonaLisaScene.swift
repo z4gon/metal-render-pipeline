@@ -1,14 +1,11 @@
 import MetalKit
 
-class SandboxScene : Scene {
+class MonaLisaScene : Scene {
     
     override func buildScene() {
         
         // base quad
-        let quadGameObject = ModelGameObject(
-            modelMeshReference: ModelMeshReference("samus"),
-            textureReference: TextureReference("samus", fileExtension: "png")
-        )
+        let quadGameObject = TextureQuadGameObject(TextureReference("mona-lisa"))
         addChild(quadGameObject)
         
         // camera

@@ -2,16 +2,19 @@
 
 struct Vertex: sizeable{
     var position: float3
+    var normal: float4
     var color: float4
-    var uv: float2
+    var textureCoordinate: float2
     
     init(
         position: float3,
+        normal: float4 = float4(repeating: 0),
         color: float4 = float4(repeating: 0),
-        uv: float2 = float2(repeating: 0)
+        textureCoordinate: float2 = float2(repeating: 0)
     ) {
         self.position = position
+        self.normal = normal
         self.color = color
-        self.uv = uv
+        self.textureCoordinate = textureCoordinate
     }
 }

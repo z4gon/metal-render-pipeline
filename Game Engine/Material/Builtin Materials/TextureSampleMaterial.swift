@@ -2,20 +2,20 @@ import MetalKit
 
 class TextureSampleMaterial: Material {
     
-    private var _textureDefinition: TextureDefinition!
+    private var _textureReference: TextureReference!
     
-    init(_ textureDefinition: TextureDefinition) {
+    init(_ textureReference: TextureReference) {
         super.init()
         fragmentFunctionName = FragmentFunctionNames.TextureSample
-        setTextureDefinition(textureDefinition)
+        setTextureReference(textureReference)
     }
     
-    func setTextureDefinition(_ textureDefinition: TextureDefinition) {
-        _textureDefinition = textureDefinition
+    func setTextureReference(_ textureReference: TextureReference) {
+        _textureReference = textureReference
     }
     
     override func setGpuValues() {
         Graphics.renderCommandEncoder.setFragmentSamplerState(SamplerStateCache.get(.Linear), index: 0)
-        Graphics.renderCommandEncoder.setFragmentTexture(TextureCache.get(_textureDefinition), index: 0)
+        Graphics.renderCommandEncoder.setFragmentTexture(TextureCache.get(_textureReference), index: 0)
     }
 }

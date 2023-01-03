@@ -1,15 +1,15 @@
 import MetalKit
 
-class TextureCache : Cache<TextureDefinition, MTLTexture> {
+class TextureCache : Cache<TextureReference, MTLTexture> {
     
-    private static var _textures: [String: Texture] = [:]
+    private static var _textures: [String: MTLTexture] = [:]
     
-    override class func get(_ textureDefinition: TextureDefinition)->MTLTexture{
+    override class func get(_ textureReference: TextureReference)->MTLTexture{
         
-        if(!_textures.keys.contains(textureDefinition.id)) {
-            _textures.updateValue(textureDefinition.createTexture(), forKey: textureDefinition.id)
+        if(!_textures.keys.contains(textureReference.id)) {
+            _textures.updateValue(textureReference.load(), forKey: textureReference.id)
         }
         
-        return _textures[textureDefinition.id]!.texture
+        return _textures[textureReference.id]!
     }
 }

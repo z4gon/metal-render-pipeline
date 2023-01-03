@@ -1,11 +1,11 @@
 import MetalKit
 
-class UVsScene : Scene {
+class UVsGradientScene : Scene {
     
     override func buildScene() {
         
         // base quad
-        let quadGameObject = UVsQuadGameObject()
+        let quadGameObject = UVsGradientQuadGameObject()
         addChild(quadGameObject)
         
         // camera
