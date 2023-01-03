@@ -63,7 +63,7 @@ class MeshRenderer : Component, Renderable, LateUpdatable {
     
     func renderModelMesh(_ mesh: ModelMesh) {
         
-        if(mesh.mtkMesh! != nil) { return }
+        if(mesh.mtkMesh == nil) { return }
         
         for vertexBuffer in mesh.mtkMesh!.vertexBuffers {
             Graphics.renderCommandEncoder.setVertexBuffer(vertexBuffer.buffer, offset: vertexBuffer.offset, index: 0)

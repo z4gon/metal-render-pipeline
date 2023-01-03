@@ -7,8 +7,9 @@ class SandboxScene : Scene {
         // base quad
         let quadGameObject = ModelGameObject(
             modelMeshReference: ModelMeshReference("samus"),
-            textureReference: TextureReference("samus", fileExtension: "png")
+            textureReference: TextureReference("samus", fileExtension: "png", textureLoaderOrigin: MTKTextureLoader.Origin.bottomLeft)
         )
+        quadGameObject.position.y = -0.5
         addChild(quadGameObject)
         
         // camera
