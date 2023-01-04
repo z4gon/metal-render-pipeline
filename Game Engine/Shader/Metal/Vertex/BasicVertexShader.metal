@@ -8,8 +8,8 @@ using namespace metal;
 vertex FragmentData basic_vertex_shader(
   // metal can infer the data because we are describing it using the vertex descriptor
   const VertexData IN [[ stage_in ]],
-  constant ModelConstants &modelConstants [[ buffer(1) ]],
-  constant SceneConstants &sceneConstants [[ buffer(2) ]]
+  constant ModelConstants & modelConstants [[ buffer(1) ]],
+  constant SceneConstants & sceneConstants [[ buffer(2) ]]
 ){
     FragmentData OUT;
     

@@ -7,7 +7,7 @@ using namespace metal;
 
 fragment half4 fill_color_fragment_shader(
     const FragmentData IN [[ stage_in ]],
-    constant float4 &color [[ buffer(1) ]]
+    constant float4 & color [[ buffer(1) ]]
 ){
     return half4(color.r, color.g, color.b, color.a);
 }
