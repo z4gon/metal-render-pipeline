@@ -29,3 +29,7 @@ struct SceneConstants {
     float4x4 projectionMatrix;
     float time;
 };
+
+struct LightData {
+    float3 position;
+};

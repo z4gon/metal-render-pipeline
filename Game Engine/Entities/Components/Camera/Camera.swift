@@ -5,7 +5,7 @@ enum CameraType {
     case Orthogonal
 }
 
-class Camera : Component, EarlyUpdatable {
+class Camera : Component, LateUpdatable {
     
     public var viewMatrix: float4x4 = matrix_identity_float4x4
     public var projectionMatrix: float4x4 = matrix_identity_float4x4
@@ -44,8 +44,7 @@ class Camera : Component, EarlyUpdatable {
         projectionMatrix = result
     }
     
-    // to ensure all other components get the accurate camera position
-    func doEarlyUpdate() {
+    func doLateUpdate() {
         updateViewMatrix()
         updateProjectionMatrix()
     }

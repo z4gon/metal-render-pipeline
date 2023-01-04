@@ -17,6 +17,11 @@ class SandboxScene : Scene {
         cameraGameObject.position = float3(0, 0, 2)
         cameraGameObject.addComponent(DebugCameraComponent())
         
+        // light
+        let light = GameObject()
+        light.position = float3(0.5, 0.5, 0)
+        light.addComponent(Light())
+        
         addChild(cameraGameObject)
     }
 }
