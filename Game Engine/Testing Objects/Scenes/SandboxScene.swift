@@ -20,7 +20,7 @@ class SandboxScene : Scene {
         // light
         let light = GameObject()
         light.position = float3(0.5, 0.5, 0)
-        light.addComponent(Light())
+        light.addComponent(Light(color: Colors.White, intensity: 3))
         
         addChild(cameraGameObject)
     }

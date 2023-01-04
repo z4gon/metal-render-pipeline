@@ -32,4 +32,6 @@ struct SceneConstants {
 
 struct LightData {
     float3 position;
+    float intensity;
+    float4 color;
 };

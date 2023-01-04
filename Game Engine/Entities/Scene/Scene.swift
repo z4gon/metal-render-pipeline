@@ -9,7 +9,7 @@ class Scene : Transform {
         buildScene()
     }
     
-    func buildScene() {}
+    func buildScene() { }
     
     func updateSceneConstants() {
         _sceneConstants.viewMatrix = CameraManager.mainCamera.viewMatrix
@@ -23,6 +23,9 @@ class Scene : Transform {
         
         // set the view matrix and projection matrix
         Graphics.renderCommandEncoder.setVertexBytes(&_sceneConstants, length: SceneConstants.stride, index: 2)
+        
+        // set light data
+        Graphics.renderCommandEncoder.setFragmentBuffer(LightManager.lightsBuffer, offset: 0, index: 0)
         
         super.render()
     }

@@ -6,8 +6,12 @@ class TextureSampleMaterial: Material {
     
     init(_ textureReference: TextureReference) {
         super.init()
-        fragmentFunctionName = FragmentFunctionNames.TextureSample
+        setFragmentShader()
         setTextureReference(textureReference)
+    }
+    
+    func setFragmentShader(){
+        fragmentFunctionName = FragmentFunctionNames.TextureSample
     }
     
     func setTextureReference(_ textureReference: TextureReference) {

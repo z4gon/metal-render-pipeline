@@ -8,7 +8,7 @@ class ModelGameObject : GameObject {
     ) {
         super.init()
         
-        let material = TextureSampleMaterial(textureReference)
+        let material = LitTextureSampleMaterial(textureReference)
         
         self.addComponent(MeshRenderer(meshReference: modelMeshReference, material: material))
         self.addComponent(RotateYComponent())
