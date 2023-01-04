@@ -15,9 +15,12 @@ vertex FragmentData basic_vertex_shader(
     
     // return the vertex position in homogeneous screen space
     // ProjectionMatrix * ViewMatrix * ModelMatrix * ObjectPosition = HSCPosition
-    OUT.position = sceneConstants.projectionMatrix
-                    * sceneConstants.viewMatrix
-                    * modelConstants.modelMatrix
+    OUT.HCPosition = sceneConstants.projectionMatrix
+                        * sceneConstants.viewMatrix
+                        * modelConstants.modelMatrix
+                        * float4(IN.position, 1);
+    
+    OUT.position = modelConstants.modelMatrix
                     * float4(IN.position, 1);
     
     OUT.normal = IN.normal;
