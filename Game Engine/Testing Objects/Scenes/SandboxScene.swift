@@ -13,21 +13,9 @@ class SandboxScene : Scene {
         addChild(samusGameObject)
         
         // camera
-        let cameraGameObject = GameObject()
-        cameraGameObject.position = float3(0, 0, 1.3)
-        cameraGameObject.addComponent(DebugCameraComponent())
-        
-        addChild(cameraGameObject)
+        addChild(DebugCameraGameObject())
         
         // light
-        let lightGameObject = GameObject()
-        lightGameObject.position = float3(0.5, 0.5, 0)
-        
-        let lightComponent = Light()
-        lightComponent.intensity = 5
-        lightComponent.ambient = 0.6
-        lightGameObject.addComponent(lightComponent)
-        
-        addChild(lightGameObject)
+        addChild(LightGameObject())
     }
 }

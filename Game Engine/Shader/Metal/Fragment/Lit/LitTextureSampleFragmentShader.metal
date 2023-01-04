@@ -28,7 +28,7 @@ fragment half4 lit_texture_sample_fragment_shader(
 //    float lightInfluence = clamp(dot(IN.normal, lightDir), 0.0, 1.0);
 //    float4 diffuse = light.color * lightInfluence * light.intensity;
 //
-    color = color * ambient;
+    color = color + ambient;
     
     return half4(color.r, color.g, color.b, color.a);
 }

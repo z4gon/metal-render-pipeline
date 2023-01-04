@@ -16,9 +16,9 @@ class Light : Component {
     public var data: LightData! {
         return LightData(
             position: gameObject.position,
+            color: color,
             intensity: intensity,
-            ambient: ambient,
-            color: color
+            ambient: ambient
         )
     }
 }

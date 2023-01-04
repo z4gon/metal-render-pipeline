@@ -19,10 +19,6 @@ class CubeAndQuadScene : Scene {
         quadGameObject.addChild(cubeGameObject)
         
         // camera
-        let cameraGameObject = GameObject()
-        cameraGameObject.position = float3(0, 0, 3)
-        cameraGameObject.addComponent(DebugCameraComponent())
-        
-        addChild(cameraGameObject)
+        addChild(DebugCameraGameObject())
     }
 }

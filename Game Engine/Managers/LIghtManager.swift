@@ -1,7 +1,9 @@
 import MetalKit
 
 class LightManager {
-    public static var lightsBuffer: MTLBuffer! {
+    public static var lightsBuffer: MTLBuffer? {
+        if(_lights.count == 0) { return nil }
+        
         if(_lightsBuffer == nil) {
             
             for light in _lights {

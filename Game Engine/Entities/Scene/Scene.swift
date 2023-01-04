@@ -25,7 +25,9 @@ class Scene : Transform {
         Graphics.renderCommandEncoder.setVertexBytes(&_sceneConstants, length: SceneConstants.stride, index: 2)
         
         // set light data
-        Graphics.renderCommandEncoder.setFragmentBuffer(LightManager.lightsBuffer, offset: 0, index: 0)
+        if let lightsBuffer = LightManager.lightsBuffer {
+            Graphics.renderCommandEncoder.setFragmentBuffer(lightsBuffer, offset: 0, index: 0)
+        }
         
         super.render()
     }

@@ -9,10 +9,6 @@ class MonaLisaScene : Scene {
         addChild(quadGameObject)
         
         // camera
-        let cameraGameObject = GameObject()
-        cameraGameObject.position = float3(0, 0, 2)
-        cameraGameObject.addComponent(DebugCameraComponent())
-        
-        addChild(cameraGameObject)
+        addChild(DebugCameraGameObject())
     }
 }
