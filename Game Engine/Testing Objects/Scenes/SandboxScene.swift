@@ -9,19 +9,25 @@ class SandboxScene : Scene {
             modelMeshReference: ModelMeshReference("samus"),
             textureReference: TextureReference("samus", fileExtension: "png", textureLoaderOrigin: MTKTextureLoader.Origin.bottomLeft)
         )
-        samusGameObject.position.y = -0.5
+        samusGameObject.position.y = -0.4
         addChild(samusGameObject)
         
         // camera
         let cameraGameObject = GameObject()
-        cameraGameObject.position = float3(0, 0, 2)
+        cameraGameObject.position = float3(0, 0, 1.3)
         cameraGameObject.addComponent(DebugCameraComponent())
         
-        // light
-        let light = GameObject()
-        light.position = float3(0.5, 0.5, 0)
-        light.addComponent(Light(color: Colors.White, intensity: 5))
-        
         addChild(cameraGameObject)
+        
+        // light
+        let lightGameObject = GameObject()
+        lightGameObject.position = float3(0.5, 0.5, 0)
+        
+        let lightComponent = Light()
+        lightComponent.intensity = 5
+        lightComponent.ambient = 0.6
+        lightGameObject.addComponent(lightComponent)
+        
+        addChild(lightGameObject)
     }
 }

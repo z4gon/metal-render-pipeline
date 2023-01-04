@@ -5,12 +5,7 @@ class LightManager {
         if(_lightsBuffer == nil) {
             
             for light in _lights {
-                let lightData = LightData(
-                    position: light.gameObject.position,
-                    intensity: light.intensity,
-                    color: light.color
-                )
-                _lightDatas.append(lightData)
+                _lightDatas.append(light.data)
             }
             
             _lightsBuffer = Engine.device.makeBuffer(bytes: _lightDatas, length: LightData.stride * _lightDatas.count , options: [])

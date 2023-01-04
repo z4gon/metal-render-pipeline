@@ -19,13 +19,16 @@ fragment half4 lit_texture_sample_fragment_shader(
     
     // light direction
     LightData light = lights[0];
-    float4 lightDir = IN.position - float4(light.position.xyz, 1);
-
-    // diffuse
-    float lightInfluence = clamp(dot(IN.normal, lightDir), 0.0, 1.0);
-    float4 diffuse = light.color * lightInfluence * light.intensity;
-    
-    color = color * diffuse;
+//    float4 lightDir = IN.position - float4(light.position.xyz, 1);
+//
+    // ambient
+    float4 ambient = light.ambient * light.color;
+//
+//    // diffuse
+//    float lightInfluence = clamp(dot(IN.normal, lightDir), 0.0, 1.0);
+//    float4 diffuse = light.color * lightInfluence * light.intensity;
+//
+    color = color * ambient;
     
     return half4(color.r, color.g, color.b, color.a);
 }
