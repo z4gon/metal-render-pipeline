@@ -6,7 +6,7 @@ class LightGameObject : GameObject {
         position: float3 = float3(0.5, 0.5, 0),
         color: float4 = Colors.White,
         intensity: Float = 5,
-        ambient: Float = 0.1
+        ambient: Float = 0.4
     ) {
         super.init()
         

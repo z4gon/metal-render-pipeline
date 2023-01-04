@@ -15,7 +15,9 @@ class SandboxScene : Scene {
         // camera
         addChild(DebugCameraGameObject())
         
-        // light
-        addChild(LightGameObject())
+        // lights
+        addChild(LightGameObject(position: float3(0.5, 0.5, 0), color: Colors.White))
+//        addChild(LightGameObject(position: float3(-0.5, 0.5, 0), color: Colors.Blue))
+//        addChild(LightGameObject(position: float3(-0.5, -0.5, 0), color: Colors.Red))
     }
 }

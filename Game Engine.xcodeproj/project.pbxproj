@@ -26,7 +26,7 @@
 		7F106DAB295CC90000AAB0E6 /* Shader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106DAA295CC90000AAB0E6 /* Shader.swift */; };
 		7F106DB1295CC95C00AAB0E6 /* TriangleMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106DB0295CC95C00AAB0E6 /* TriangleMesh.swift */; };
 		7F106DB3295CC98000AAB0E6 /* QuadMesh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106DB2295CC98000AAB0E6 /* QuadMesh.swift */; };
-		7F106DB5295CCE5D00AAB0E6 /* UInt32.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106DB4295CCE5D00AAB0E6 /* UInt32.swift */; };
+		7F106DB5295CCE5D00AAB0E6 /* Int.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106DB4295CCE5D00AAB0E6 /* Int.swift */; };
 		7F106DB7295CF05700AAB0E6 /* CameraManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106DB6295CF05700AAB0E6 /* CameraManager.swift */; };
 		7F106DBA295CF09E00AAB0E6 /* Camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106DB9295CF09E00AAB0E6 /* Camera.swift */; };
 		7F106DBC295CF0B800AAB0E6 /* SceneConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F106DBB295CF0B800AAB0E6 /* SceneConstants.swift */; };
@@ -148,7 +148,7 @@
 		7F106DAA295CC90000AAB0E6 /* Shader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shader.swift; sourceTree = "<group>"; };
 		7F106DB0295CC95C00AAB0E6 /* TriangleMesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TriangleMesh.swift; sourceTree = "<group>"; };
 		7F106DB2295CC98000AAB0E6 /* QuadMesh.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuadMesh.swift; sourceTree = "<group>"; };
-		7F106DB4295CCE5D00AAB0E6 /* UInt32.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UInt32.swift; sourceTree = "<group>"; };
+		7F106DB4295CCE5D00AAB0E6 /* Int.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Int.swift; sourceTree = "<group>"; };
 		7F106DB6295CF05700AAB0E6 /* CameraManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraManager.swift; sourceTree = "<group>"; };
 		7F106DB9295CF09E00AAB0E6 /* Camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Camera.swift; sourceTree = "<group>"; };
 		7F106DBB295CF0B800AAB0E6 /* SceneConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneConstants.swift; sourceTree = "<group>"; };
@@ -669,7 +669,7 @@
 			isa = PBXGroup;
 			children = (
 				7F2DCF2D2953C06600B72131 /* Float.swift */,
-				7F106DB4295CCE5D00AAB0E6 /* UInt32.swift */,
+				7F106DB4295CCE5D00AAB0E6 /* Int.swift */,
 				7F2DCF5C295652D000B72131 /* Sizeable.swift */,
 			);
 			path = Types;
@@ -955,7 +955,7 @@
 				7F106DA4295CBF9400AAB0E6 /* TriGameObject.swift in Sources */,
 				7F106DD22960D26300AAB0E6 /* Structs.metal in Sources */,
 				7F106DE12960E85E00AAB0E6 /* Time.swift in Sources */,
-				7F106DB5295CCE5D00AAB0E6 /* UInt32.swift in Sources */,
+				7F106DB5295CCE5D00AAB0E6 /* Int.swift in Sources */,
 				7F106DC6295D7B1700AAB0E6 /* CubeGameObject.swift in Sources */,
 				7F106E0B29637F9500AAB0E6 /* TextureQuadGameObject.swift in Sources */,
 				7F106DF129633CAE00AAB0E6 /* FragmentFunctionNames.swift in Sources */,

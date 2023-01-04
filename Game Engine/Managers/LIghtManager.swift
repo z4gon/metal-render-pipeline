@@ -16,6 +16,10 @@ class LightManager {
         return _lightsBuffer
     }
     
+    public static var lightsCount: Int! {
+        return _lights.count
+    }
+    
     private static var _lightDatas: [LightData]! = []
     private static var _lights: [Light]! = []
     private static var _lightsBuffer: MTLBuffer!

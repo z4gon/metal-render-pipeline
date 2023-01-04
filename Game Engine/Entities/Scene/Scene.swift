@@ -26,7 +26,9 @@ class Scene : Transform {
         
         // set light data
         if let lightsBuffer = LightManager.lightsBuffer {
+            var lightsCount = LightManager.lightsCount
             Graphics.renderCommandEncoder.setFragmentBuffer(lightsBuffer, offset: 0, index: 0)
+            Graphics.renderCommandEncoder.setFragmentBytes(&lightsCount, length: Int32.stride, index: 1)
         }
         
         super.render()
