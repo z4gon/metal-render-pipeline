@@ -3,4 +3,5 @@ struct LightData: sizeable {
     var color: float4 = Colors.White
     var intensity: Float = 1
     var ambient: Float = 0.3
+    var range: Float = 0.6
 }

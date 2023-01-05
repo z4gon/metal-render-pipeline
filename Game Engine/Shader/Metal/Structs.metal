@@ -37,4 +37,5 @@ struct LightData {
     float4 color;
     float intensity;
     float ambient;
+    float range;
 };

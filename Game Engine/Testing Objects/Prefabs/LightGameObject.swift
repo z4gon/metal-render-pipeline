@@ -3,10 +3,11 @@ import MetalKit
 class LightGameObject : GameObject {
     
     init(
-        position: float3 = float3(0.5, 0.5, 0.3),
+        position: float3 = float3(0.3, 0.3, 0.3),
         color: float4 = Colors.White,
         intensity: Float = 5,
-        ambient: Float = 0.1
+        ambient: Float = 0.1,
+        range: Float = 1
     ) {
         super.init()
         
@@ -26,6 +27,7 @@ class LightGameObject : GameObject {
         lightComponent.color = color
         lightComponent.intensity = intensity
         lightComponent.ambient = ambient
+        lightComponent.range = range
         
         addComponent(lightComponent)
     }

@@ -12,7 +12,7 @@ class MoveComponent : Component, Updatable {
     
     func doUpdate() {
         
-        let c = _inverted ? -cos(Time.time) : cos(Time.time)
+        let c = (_inverted ? -cos(Time.time) : cos(Time.time)) * 0.5
         let x = _vertical ? gameObject.position.x : c
         let y = !_vertical ? gameObject.position.y : c
         

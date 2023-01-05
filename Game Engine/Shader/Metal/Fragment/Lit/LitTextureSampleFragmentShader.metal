@@ -23,19 +23,21 @@ fragment half4 lit_texture_sample_fragment_shader(
     for(int i = 0; i < lightsCount; i++){
         LightData light = lights[i];
         
+        // light direction
+        float4 lightDir = float4(light.position.xyz, 1) - IN.worldPosition;
+        
+        // attenuation
+        float distanceToLight = length(lightDir);
+        float attenuation = 1 - clamp(distanceToLight/light.range, 0.0, 1.0);
+        
         // ambient
-        float4 ambient = light.color * light.ambient;
-//        ambient = clamp(ambient, 0.0, 1.0);
+        float4 ambient = light.color * light.ambient * attenuation;
         
         totalAmbient += ambient;
         
-        // light direction
-        float4 lightDir = normalize(float4(light.position.xyz, 1) - IN.worldPosition);
-        
         // diffuse
-        float nDotL = max(dot(normalize(IN.worldNormal), lightDir), 0.0);
-        float4 diffuse =  light.color * nDotL * light.intensity;
-//        diffuse = clamp(diffuse, 0.0, 1.0);
+        float nDotL = max(dot(normalize(IN.worldNormal), normalize(lightDir)), 0.0);
+        float4 diffuse =  light.color * nDotL * light.intensity * attenuation;
         
         totalDiffuse += diffuse;
     }
