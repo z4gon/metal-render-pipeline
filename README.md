@@ -4,6 +4,12 @@
 
 Based on the [tutorial by Rick Twohy](https://github.com/twohyjr/Metal-Game-Engine-Tutorial)
 
+## Screenshots
+
+![Picture](./dev-log/part-16/4.jpg)
+
+https://user-images.githubusercontent.com/4588601/210890571-f345090c-b2ec-4d36-95a7-42a2bbb505de.mp4
+
 ## Dev Log
 
 - [Part 1: Setting up the basic Render Pipeline](./dev-log/part-1/README.md)
