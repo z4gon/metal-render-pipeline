@@ -1,6 +1,8 @@
 import MetalKit
 
 class Material {
+    public var materialData: MaterialData = MaterialData()
+    
     public var vertexFunctionName: String = VertexFunctionNames.Basic
     public var fragmentFunctionName: String = FragmentFunctionNames.VertexColor
     
@@ -8,5 +10,15 @@ class Material {
         return "\(vertexFunctionName)/\(fragmentFunctionName)"
     }
     
-    func setGpuValues() {}
+    func setColor(_ color: float4){
+        materialData.color = color
+    }
+    
+    func setGlossiness(_ glossiness: Float){
+        materialData.glossiness = glossiness
+    }
+    
+    func setGpuValues() {
+        Graphics.renderCommandEncoder.setFragmentBytes(&materialData, length: MaterialData.stride, index: 0)
+    }
 }

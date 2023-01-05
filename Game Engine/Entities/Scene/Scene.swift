@@ -15,6 +15,7 @@ class Scene : Transform {
         _sceneConstants.viewMatrix = CameraManager.mainCamera.viewMatrix
         _sceneConstants.projectionMatrix = CameraManager.mainCamera.projectionMatrix
         _sceneConstants.time = Time.time
+        _sceneConstants.cameraPosition = CameraManager.mainCamera.gameObject.position
     }
     
     override func render() {
@@ -27,8 +28,8 @@ class Scene : Transform {
         // set light data
         if LightManager.lightsCount > 0 {
             var lightsCount = LightManager.lightsCount
-            Graphics.renderCommandEncoder.setFragmentBuffer(LightManager.lightsBuffer, offset: 0, index: 0)
-            Graphics.renderCommandEncoder.setFragmentBytes(&lightsCount, length: Int32.stride, index: 1)
+            Graphics.renderCommandEncoder.setFragmentBuffer(LightManager.lightsBuffer, offset: 0, index: 1)
+            Graphics.renderCommandEncoder.setFragmentBytes(&lightsCount, length: Int32.stride, index: 2)
         }
         
         super.render()

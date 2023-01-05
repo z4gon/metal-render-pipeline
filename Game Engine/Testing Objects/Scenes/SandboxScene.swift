@@ -7,7 +7,8 @@ class SandboxScene : Scene {
         // samus
         let samusGameObject = ModelGameObject(
             modelMeshReference: ModelMeshReference("samus"),
-            textureReference: TextureReference("samus", fileExtension: "png", textureLoaderOrigin: MTKTextureLoader.Origin.bottomLeft)
+            textureReference: TextureReference("samus", fileExtension: "png", textureLoaderOrigin: MTKTextureLoader.Origin.bottomLeft),
+            glossiness: 10
         )
         samusGameObject.position.y = -0.4
         addChild(samusGameObject)

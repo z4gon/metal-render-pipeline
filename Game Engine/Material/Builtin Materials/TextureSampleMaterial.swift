@@ -19,6 +19,7 @@ class TextureSampleMaterial: Material {
     }
     
     override func setGpuValues() {
+        super.setGpuValues()
         Graphics.renderCommandEncoder.setFragmentSamplerState(SamplerStateCache.get(.Linear), index: 0)
         Graphics.renderCommandEncoder.setFragmentTexture(TextureCache.get(_textureReference), index: 0)
     }

@@ -20,6 +20,7 @@ struct FragmentData {
     float4 color;
     float2 uv;
     float time;
+    float3 cameraPosition;
 };
 
 struct ModelConstants {
@@ -30,6 +31,7 @@ struct SceneConstants {
     float4x4 viewMatrix;
     float4x4 projectionMatrix;
     float time;
+    float3 cameraPosition;
 };
 
 struct LightData {
@@ -38,4 +40,9 @@ struct LightData {
     float intensity;
     float ambient;
     float range;
+};
+
+struct MaterialData {
+    float4 color;
+    float glossiness;
 };

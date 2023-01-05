@@ -15,10 +15,12 @@ class LightGameObject : GameObject {
         scale = float3(repeating: 0.02)
         
         // sphere
+        let material = FillColorMaterial()
+        material.setColor(color)
         addComponent(
             MeshRenderer(
                 meshReference: ModelMeshReference("sphere"),
-                material: FillColorMaterial(color)
+                material: material
             )
         )
         

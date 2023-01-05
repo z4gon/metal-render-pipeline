@@ -26,6 +26,7 @@ vertex FragmentData basic_vertex_shader(
     OUT.color = IN.color;
     OUT.uv = IN.textureCoordinate;
     OUT.time = sceneConstants.time;
+    OUT.cameraPosition = sceneConstants.cameraPosition;
     
     return OUT;
 }
