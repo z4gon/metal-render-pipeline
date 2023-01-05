@@ -20,11 +20,8 @@ class SandboxScene : Scene {
         lightGameObject.addComponent(MoveComponent())
         addChild(lightGameObject)
         
-        lightGameObject = LightGameObject(position: float3(-0.5, -0.5, 0.3), color: Colors.Blue, intensity: 10, ambient: 0.1)
+        lightGameObject = LightGameObject(position: float3(-0.5, -0.5, 0.3), color: Colors.Blue, intensity: 15, ambient: 0.6)
         lightGameObject.addComponent(MoveComponent(inverted: true))
         addChild(lightGameObject)
-        
-//        addChild(LightGameObject(position: float3(-0.5, 0.5, 0.3), color: float4(0.782, 0.170, 0.850, 1.0)))
-//        addChild(LightGameObject(position: float3(-0.5, -0.5, 0.3), color: float4(0.0700, 0.426, 1.00, 1), intensity: 10, ambient: 0.1))
     }
 }

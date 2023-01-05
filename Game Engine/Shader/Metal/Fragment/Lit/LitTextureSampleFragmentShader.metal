@@ -24,8 +24,8 @@ fragment half4 lit_texture_sample_fragment_shader(
         LightData light = lights[i];
         
         // ambient
-        float4 ambient = light.ambient * light.color;
-        ambient = clamp(ambient, 0.0, 1.0);
+        float4 ambient = light.color * light.ambient;
+//        ambient = clamp(ambient, 0.0, 1.0);
         
         totalAmbient += ambient;
         
@@ -33,9 +33,9 @@ fragment half4 lit_texture_sample_fragment_shader(
         float4 lightDir = normalize(float4(light.position.xyz, 1) - IN.worldPosition);
         
         // diffuse
-        float lightInfluence = max(dot(normalize(IN.worldNormal), lightDir), 0.0);
-        float4 diffuse = light.intensity * lightInfluence * light.color;
-        diffuse = clamp(diffuse, 0.0, 1.0);
+        float nDotL = max(dot(normalize(IN.worldNormal), lightDir), 0.0);
+        float4 diffuse =  light.color * nDotL * light.intensity;
+//        diffuse = clamp(diffuse, 0.0, 1.0);
         
         totalDiffuse += diffuse;
     }
