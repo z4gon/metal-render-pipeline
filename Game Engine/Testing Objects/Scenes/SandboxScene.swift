@@ -17,11 +17,11 @@ class SandboxScene : Scene {
         
         // lights
         var lightGameObject = LightGameObject(position: float3(0.5, 0.5, 0.3), color: Colors.White)
-        lightGameObject.addComponent(MoveComponent())
+        lightGameObject.addComponent(MoveComponent(inverted: false, vertical: true))
         addChild(lightGameObject)
         
         lightGameObject = LightGameObject(position: float3(-0.5, -0.5, 0.3), color: Colors.Blue, intensity: 15, ambient: 0.6)
-        lightGameObject.addComponent(MoveComponent(inverted: true))
+        lightGameObject.addComponent(MoveComponent(inverted: true, vertical: true))
         addChild(lightGameObject)
     }
 }
