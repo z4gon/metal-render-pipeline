@@ -4,16 +4,14 @@ class LightManager {
     public static var lightsBuffer: MTLBuffer? {
         if(_lights.count == 0) { return nil }
         
-        if(_lightsBuffer == nil) {
-            
-            for light in _lights {
-                _lightDatas.append(light.data)
-            }
-            
-            _lightsBuffer = Engine.device.makeBuffer(bytes: _lightDatas, length: LightData.stride * _lightDatas.count , options: [])
+        _lightDatas = []
+        for light in _lights {
+            _lightDatas.append(light.data)
         }
         
-        return _lightsBuffer
+        // ineficcient, but will do for now
+        // we need an updated position of the lights
+        return Engine.device.makeBuffer(bytes: _lightDatas, length: LightData.stride * _lightDatas.count , options: [])
     }
     
     public static var lightsCount: Int! {

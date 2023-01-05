@@ -3,15 +3,15 @@ import MetalKit
 class LightGameObject : GameObject {
     
     init(
-        position: float3 = float3(0.5, 0.5, 0),
+        position: float3 = float3(0.5, 0.5, 0.3),
         color: float4 = Colors.White,
         intensity: Float = 5,
-        ambient: Float = 0.4
+        ambient: Float = 0.1
     ) {
         super.init()
         
         self.position = position
-        scale = float3(repeating: 0.05)
+        scale = float3(repeating: 0.02)
         
         // sphere
         addComponent(

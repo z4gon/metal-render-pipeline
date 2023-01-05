@@ -1,6 +1,6 @@
 # Blender v2.66 (sub 0) OBJ File: 'only_quad_sphere.blend'
 # www.blender.org
-mtllib only_quad_sphere.mtl
+
 o Cube.001
 v 0.825846 0.224038 -0.958102
 v 0.848568 0.066073 -0.962155

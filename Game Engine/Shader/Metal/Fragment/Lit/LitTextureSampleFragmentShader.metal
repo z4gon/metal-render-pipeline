@@ -18,22 +18,30 @@ fragment half4 lit_texture_sample_fragment_shader(
     // sample texture
     float4 color = texture.sample(sampler2d, IN.uv);
     
-    // light direction
-//    float4 lightDir = IN.position - float4(light.position.xyz, 1);
-    
     float4 totalAmbient = float4(0,0,0,1);
+    float4 totalDiffuse = float4(0,0,0,1);
     for(int i = 0; i < lightsCount; i++){
         LightData light = lights[i];
         
         // ambient
-        totalAmbient += light.ambient * light.color;
+        float4 ambient = light.ambient * light.color;
+        ambient = clamp(ambient, 0.0, 1.0);
+        
+        totalAmbient += ambient;
+        
+        // light direction
+        float4 lightDir = normalize(float4(light.position.xyz, 1) - IN.worldPosition);
+        
+        // diffuse
+        float lightInfluence = max(dot(normalize(IN.worldNormal), lightDir), 0.0);
+        float4 diffuse = light.intensity * lightInfluence * light.color;
+        diffuse = clamp(diffuse, 0.0, 1.0);
+        
+        totalDiffuse += diffuse;
     }
 
-    // diffuse
-//    float lightInfluence = clamp(dot(IN.normal, lightDir), 0.0, 1.0);
-//    float4 diffuse = light.color * lightInfluence * light.intensity;
-
-    color = color * totalAmbient;
+    float4 phong = totalAmbient + totalDiffuse;
+    color = color * phong;
     
     return half4(color.r, color.g, color.b, color.a);
 }

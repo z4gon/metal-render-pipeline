@@ -13,17 +13,16 @@ vertex FragmentData basic_vertex_shader(
 ){
     FragmentData OUT;
     
+    OUT.worldPosition = modelConstants.modelMatrix * float4(IN.position, 1);
+    
     // return the vertex position in homogeneous screen space
     // ProjectionMatrix * ViewMatrix * ModelMatrix * ObjectPosition = HSCPosition
-    OUT.HCPosition = sceneConstants.projectionMatrix
-                        * sceneConstants.viewMatrix
-                        * modelConstants.modelMatrix
-                        * float4(IN.position, 1);
-    
-    OUT.position = modelConstants.modelMatrix
-                    * float4(IN.position, 1);
+    OUT.position = sceneConstants.projectionMatrix * sceneConstants.viewMatrix * OUT.worldPosition;
     
     OUT.normal = IN.normal;
+    
+    OUT.worldNormal = modelConstants.modelMatrix * OUT.normal;
+    
     OUT.color = IN.color;
     OUT.uv = IN.textureCoordinate;
     OUT.time = sceneConstants.time;

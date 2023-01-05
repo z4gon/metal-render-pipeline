@@ -13,9 +13,10 @@ struct VertexData {
 
 struct FragmentData {
     // use position attribute to prevent interpolation of the value
-    float4 HCPosition [[ position ]];
-    float4 position;
+    float4 position [[ position ]];
+    float4 worldPosition;
     float4 normal;
+    float4 worldNormal;
     float4 color;
     float2 uv;
     float time;

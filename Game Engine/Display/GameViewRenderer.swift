@@ -31,6 +31,7 @@ extension GameViewRenderer: MTKViewDelegate {
         let commandBuffer = Engine.commandQueue.makeCommandBuffer()
         
         let renderCommandEncoder = commandBuffer?.makeRenderCommandEncoder(descriptor: renderPassDescriptor)
+        renderCommandEncoder!.label = "My Render Encoder"
         
         Time.updateTime(1.0 / Float(view.preferredFramesPerSecond))
         Graphics.setRenderCommandEncoder(renderCommandEncoder!)

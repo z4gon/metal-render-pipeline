@@ -13,12 +13,16 @@ class Light : Component {
     public var ambient: Float = 0.3
     public var color: float4 = Colors.White
     
+    private var _data: LightData = LightData()
     public var data: LightData! {
-        return LightData(
-            position: gameObject.position,
-            color: color,
-            intensity: intensity,
-            ambient: ambient
-        )
+        
+//        print(gameObject.position)
+        
+        _data.position = gameObject.position
+        _data.color = color
+        _data.intensity = intensity
+        _data.ambient = ambient
+        
+        return _data
     }
 }
