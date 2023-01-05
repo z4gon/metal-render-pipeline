@@ -6,8 +6,12 @@ class TextureSampleMaterial: Material {
     
     init(_ textureReference: TextureReference) {
         super.init()
-        fragmentFunctionName = FragmentFunctionNames.TextureSample
+        setFragmentShader()
         setTextureReference(textureReference)
+    }
+    
+    func setFragmentShader(){
+        fragmentFunctionName = FragmentFunctionNames.TextureSample
     }
     
     func setTextureReference(_ textureReference: TextureReference) {
@@ -15,6 +19,7 @@ class TextureSampleMaterial: Material {
     }
     
     override func setGpuValues() {
+        super.setGpuValues()
         Graphics.renderCommandEncoder.setFragmentSamplerState(SamplerStateCache.get(.Linear), index: 0)
         Graphics.renderCommandEncoder.setFragmentTexture(TextureCache.get(_textureReference), index: 0)
     }

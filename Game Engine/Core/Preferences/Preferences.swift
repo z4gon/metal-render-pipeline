@@ -5,7 +5,7 @@ import MetalKit
 class Preferences {
     // clearColor fills the screen each time the GPU clears the frame (60 times per second at 60 fps)
     // rgba is 0-1
-    public static var ClearColor: MTLClearColor = ClearColors.White
+    public static var ClearColor: MTLClearColor = ClearColors.Black
     
     // how pixels are stored
     public static var PixelFormat: MTLPixelFormat = MTLPixelFormat.bgra8Unorm

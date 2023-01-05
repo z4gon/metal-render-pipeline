@@ -2,16 +2,12 @@
 // https://stackoverflow.com/questions/57692571/metal-vertex-shader-warning-in-swift-5
 
 #include <metal_stdlib>
-#include "../Structs.metal"
+#include "../../Structs.metal"
 using namespace metal;
 
-fragment half4 uvs_fragment_shader(
+fragment half4 vertex_color_fragment_shader(
     const FragmentData IN [[ stage_in ]]
 ){
-    return half4(
-        sin(IN.uv.x + IN.time),
-        sin(IN.uv.y + IN.time),
-        0,
-        1
-    );
+    float4 color = IN.color;
+    return half4(color.r, color.g, color.b, color.a);
 }

@@ -21,3 +21,4 @@ Based on the [tutorial by Rick Twohy](https://github.com/twohyjr/Metal-Game-Engi
 - [Part 13: Materials, Multiple Render Pipeline Descriptors and States](./dev-log/part-13/README.md)
 - [Part 14: UVs, Loading and Sampling Textures](./dev-log/part-14/README.md)
 - [Part 15: Loading and Rendering .OBJ Models](./dev-log/part-15/README.md)
+- [Part 16: Lighting, Ambient, Diffuse and Specular](./dev-log/part-16/README.md)

@@ -11,6 +11,11 @@ class GameObject : Transform {
         if let camera  = component as? Camera {
             CameraManager.mainCamera = camera
         }
+        
+        // keep track of the lights
+        if let light  = component as? Light {
+            LightManager.addLight(light)
+        }
     }
 }
 

@@ -2,7 +2,7 @@
 // https://stackoverflow.com/questions/57692571/metal-vertex-shader-warning-in-swift-5
 
 #include <metal_stdlib>
-#include "../Structs.metal"
+#include "../../Structs.metal"
 using namespace metal;
 
 fragment half4 texture_sample_fragment_shader(

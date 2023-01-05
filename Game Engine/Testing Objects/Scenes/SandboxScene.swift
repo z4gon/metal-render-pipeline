@@ -7,16 +7,34 @@ class SandboxScene : Scene {
         // samus
         let samusGameObject = ModelGameObject(
             modelMeshReference: ModelMeshReference("samus"),
-            textureReference: TextureReference("samus", fileExtension: "png", textureLoaderOrigin: MTKTextureLoader.Origin.bottomLeft)
+            textureReference: TextureReference("samus", fileExtension: "png", textureLoaderOrigin: MTKTextureLoader.Origin.bottomLeft),
+            glossiness: 10
         )
-        samusGameObject.position.y = -0.5
+        samusGameObject.position.y = -0.4
         addChild(samusGameObject)
         
         // camera
-        let cameraGameObject = GameObject()
-        cameraGameObject.position = float3(0, 0, 2)
-        cameraGameObject.addComponent(DebugCameraComponent())
+        addChild(DebugCameraGameObject())
         
-        addChild(cameraGameObject)
+        // lights
+        var lightGameObject = LightGameObject(
+            position: float3(-0.3, 0.3, 0.3),
+            color: Colors.White,
+            intensity: 7,
+            ambient: 0.1,
+            range: 0.9
+        )
+        lightGameObject.addComponent(MoveComponent(inverted: false, vertical: true))
+        addChild(lightGameObject)
+
+        lightGameObject = LightGameObject(
+            position: float3(0.3, -0.3, 0.3),
+            color: Colors.Blue,
+            intensity: 50,
+            ambient: 1,
+            range: 0.7
+        )
+        lightGameObject.addComponent(MoveComponent(inverted: true, vertical: true))
+        addChild(lightGameObject)
     }
 }

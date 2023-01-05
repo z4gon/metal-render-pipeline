@@ -4,11 +4,13 @@ class ModelGameObject : GameObject {
     
     init(
         modelMeshReference: ModelMeshReference,
-        textureReference: TextureReference
+        textureReference: TextureReference,
+        glossiness: Float = 2
     ) {
         super.init()
         
-        let material = TextureSampleMaterial(textureReference)
+        let material = LitTextureSampleMaterial(textureReference)
+        material.setGlossiness(glossiness)
         
         self.addComponent(MeshRenderer(meshReference: modelMeshReference, material: material))
         self.addComponent(RotateYComponent())

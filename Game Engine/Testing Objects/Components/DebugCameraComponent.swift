@@ -1,32 +1,30 @@
 import MetalKit
 
-class DebugCameraComponent : Camera {
+class DebugCameraComponent : Camera, EarlyUpdatable {
     
-    override func doEarlyUpdate() {
+    func doEarlyUpdate() {
         
-//        if(Keyboard.isKeyPressed(KeyCodes.upArrow)){
-//            gameObject.position.y += deltaTime
-//        }
-//
-//        if(Keyboard.isKeyPressed(KeyCodes.downArrow)){
-//            gameObject.position.y -= deltaTime
-//        }
-//
-//        if(Keyboard.isKeyPressed(KeyCodes.leftArrow)){
-//            gameObject.position.x -= deltaTime
-//        }
-//
-//        if(Keyboard.isKeyPressed(KeyCodes.rightArrow)){
-//            gameObject.position.x += deltaTime
-//        }
+        if(Keyboard.isKeyPressed(KeyCodes.w)){
+            gameObject.position.y += Time.deltaTime
+        }
+
+        if(Keyboard.isKeyPressed(KeyCodes.s)){
+            gameObject.position.y -= Time.deltaTime
+        }
+
+        if(Keyboard.isKeyPressed(KeyCodes.a)){
+            gameObject.position.x -= Time.deltaTime
+        }
+
+        if(Keyboard.isKeyPressed(KeyCodes.d)){
+            gameObject.position.x += Time.deltaTime
+        }
         
         if(Mouse.isMouseButtonPressed(button: MouseCodes.left)){
-            gameObject.position.y += Mouse.getDY() * Time.deltaTime * 0.5
-            gameObject.position.x -= Mouse.getDX() * Time.deltaTime * 0.5
+            gameObject.rotation.x -= Mouse.getDY() * Time.deltaTime * 0.1
+            gameObject.rotation.y -= Mouse.getDX() * Time.deltaTime * 0.1
         }
         
         gameObject.position.z -= Mouse.getDWheel() * Time.deltaTime * 4
-            
-        super.doEarlyUpdate()
     }
 }
