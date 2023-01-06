@@ -19,6 +19,6 @@ class Material {
     }
     
     func setGpuValues() {
-        Graphics.renderCommandEncoder.setFragmentBytes(&materialData, length: MaterialData.stride, index: 0)
+        Graphics.renderCommandEncoder.setVertexBytes(&materialData, length: MaterialData.stride, index: 5)
     }
 }

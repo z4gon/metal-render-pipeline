@@ -28,8 +28,8 @@ class Scene : Transform {
         // set light data
         if LightManager.lightsCount > 0 {
             var lightsCount = LightManager.lightsCount
-            Graphics.renderCommandEncoder.setFragmentBuffer(LightManager.lightsBuffer, offset: 0, index: 1)
-            Graphics.renderCommandEncoder.setFragmentBytes(&lightsCount, length: Int32.stride, index: 2)
+            Graphics.renderCommandEncoder.setVertexBuffer(LightManager.lightsBuffer, offset: 0, index: 3)
+            Graphics.renderCommandEncoder.setVertexBytes(&lightsCount, length: Int32.stride, index: 4)
         }
         
         super.render()

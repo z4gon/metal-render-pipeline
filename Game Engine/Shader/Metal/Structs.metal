@@ -16,11 +16,10 @@ struct FragmentData {
     float4 position [[ position ]];
     float4 worldPosition;
     float4 normal;
-    float4 worldNormal;
     float4 color;
+    float4 phong;
     float2 uv;
     float time;
-    float3 cameraPosition;
 };
 
 struct ModelConstants {
